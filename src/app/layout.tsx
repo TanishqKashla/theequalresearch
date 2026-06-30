@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { MarketTicker } from "@/components/MarketTicker";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -51,6 +52,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink-900">
+        <MarketTicker />
         {children}
       </body>
     </html>

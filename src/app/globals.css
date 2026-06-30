@@ -57,6 +57,22 @@ body {
   color: #08111f;
 }
 
+/* Market ticker marquee */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.animate-ticker {
+  animation-name: ticker-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
