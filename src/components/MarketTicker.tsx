@@ -11,7 +11,7 @@ function QuoteLogo({ q }: { q: Quote }) {
   const showImg = q.logo && !failed;
 
   return (
-    <span className="grid h-4 w-4 shrink-0 place-items-center overflow-hidden rounded-sm bg-white/10">
+    <span className="grid h-4 w-4 shrink-0 place-items-center overflow-hidden rounded-sm bg-ink-900/5">
       {showImg ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -23,7 +23,7 @@ function QuoteLogo({ q }: { q: Quote }) {
           onError={() => setFailed(true)}
         />
       ) : (
-        <span className="text-[9px] font-bold text-white/80">{q.symbol.charAt(0)}</span>
+        <span className="text-[9px] font-bold text-ink-700">{q.symbol.charAt(0)}</span>
       )}
     </span>
   );
@@ -34,13 +34,13 @@ function QuoteItem({ q }: { q: Quote }) {
   return (
     <span className="mx-5 inline-flex items-center gap-2 whitespace-nowrap text-[13px] leading-none">
       <QuoteLogo q={q} />
-      <span className="font-semibold text-white">{q.symbol}</span>
-      <span className="tabular-nums text-white/85">
+      <span className="font-semibold text-ink-900">{q.symbol}</span>
+      <span className="tabular-nums text-sand-700">
         {q.price.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
       </span>
       <span
         className={`inline-flex items-center gap-0.5 tabular-nums font-medium ${
-          up ? "text-emerald-400" : "text-red-400"
+          up ? "text-emerald-600" : "text-red-600"
         }`}
       >
         {up ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
@@ -79,7 +79,12 @@ export function MarketTicker() {
 
   if (quotes.length === 0) {
     // Reserve the bar height so layout doesn't jump before first paint.
-    return <div aria-hidden className="fixed inset-x-0 top-0 z-[60] h-9 bg-ink-950" />;
+    return (
+      <div
+        aria-hidden
+        className="fixed inset-x-0 top-0 z-[60] h-9 border-b border-ink-900/10 bg-white"
+      />
+    );
   }
 
   // Duration scales with the number of items for a steady speed (~4s per item).
@@ -87,7 +92,7 @@ export function MarketTicker() {
 
   return (
     <div
-      className="group fixed inset-x-0 top-0 z-[60] h-9 overflow-hidden border-b border-white/10 bg-ink-950"
+      className="group fixed inset-x-0 top-0 z-[60] h-9 overflow-hidden border-b border-ink-900/10 bg-white/95 backdrop-blur"
       role="marquee"
       aria-label="Live market quotes"
     >

@@ -21,7 +21,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const fieldBase =
-  "w-full rounded-lg border border-ink-900/15 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-sand-700/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
+  "w-full rounded-lg border border-ink-900/15 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-sand-700/60 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -50,8 +50,8 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-accent/30 bg-white p-10 text-center">
-        <CheckCircle2 className="h-12 w-12 text-accent-dark" />
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-brand/30 bg-white p-10 text-center shadow-lg shadow-brand/10">
+        <CheckCircle2 className="h-12 w-12 text-brand" />
         <h3 className="mt-4 font-serif text-2xl text-ink-900">Thank you!</h3>
         <p className="mt-2 max-w-sm text-sm text-sand-700">
           Your message has reached the Equal Research team. We&apos;ll get back to
@@ -59,7 +59,7 @@ export function ContactForm() {
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm font-medium text-accent-dark underline-offset-4 hover:underline"
+          className="mt-6 text-sm font-medium text-brand underline-offset-4 hover:underline"
         >
           Send another message
         </button>
@@ -70,7 +70,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-2xl border border-ink-900/10 bg-white p-6 sm:p-8"
+      className="rounded-2xl border border-ink-900/10 bg-white p-6 shadow-xl shadow-ink-900/5 sm:p-8"
       noValidate
     >
       <div className="grid gap-4 sm:grid-cols-2">
@@ -143,7 +143,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink-950 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-ink-800 disabled:opacity-60 sm:w-auto"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition-all hover:bg-brand-dark hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
       >
         {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
         {isSubmitting ? "Sending..." : "Send Message"}

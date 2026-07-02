@@ -22,8 +22,8 @@ export function WhyUs() {
               const Icon = icons[i] ?? Microscope;
               return (
                 <Reveal as="div" key={w.title} delay={(i % 2) * 0.06}>
-                  <div className="flex h-full gap-4 rounded-2xl border border-ink-900/10 bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-ink-900/5">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-accent/12 text-accent-dark">
+                  <div className="flex h-full gap-4 rounded-2xl border border-ink-900/10 bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-brand/10">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand">
                       <Icon className="h-5 w-5" />
                     </span>
                     <div>

@@ -1,24 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand — deep navy / charcoal base */
-  --color-ink-950: #08111f;
-  --color-ink-900: #0b1f3a;
-  --color-ink-850: #0e2546;
-  --color-ink-800: #132c52;
-  --color-ink-700: #1d3a63;
-  --color-ink-600: #2c4d7d;
+  /* Ink — deep navy, used for headings & body text on light surfaces */
+  --color-ink-950: #0a1a30;
+  --color-ink-900: #0f2547;
+  --color-ink-850: #16305a;
+  --color-ink-800: #1d3a6b;
+  --color-ink-700: #2a4d84;
+  --color-ink-600: #3a5f9c;
 
-  /* Accent — refined gold (premium institutional) */
-  --color-accent: #c8a45c;
-  --color-accent-light: #e3c886;
-  --color-accent-dark: #a9863f;
+  /* Brand — fresh teal (growth / trust), the new primary color */
+  --color-brand: #0d8b8b;
+  --color-brand-light: #38b2ac;
+  --color-brand-dark: #0a6f70;
+  --color-brand-soft: #dff3f1;
 
-  /* Neutrals — warm paper */
-  --color-paper: #f8f6f1;
-  --color-paper-200: #efebe2;
-  --color-paper-300: #e2ddd1;
-  --color-sand-700: #6b6457;
+  /* Accent — refined gold (premium highlight) */
+  --color-accent: #c8992f;
+  --color-accent-light: #e6bd57;
+  --color-accent-dark: #9c7420;
+  --color-accent-soft: #faf1d8;
+
+  /* Neutrals — bright paper */
+  --color-paper: #ffffff;
+  --color-paper-100: #fbfcfe;
+  --color-paper-200: #f2f6fc;
+  --color-paper-300: #e6edf7;
+  --color-sand-700: #556072;
+
+  /* Soft tints for gradient washes */
+  --color-sky: #e9f3fd;
+  --color-mint: #e6f6f1;
 
   /* Fonts */
   --font-serif: var(--font-fraunces), Georgia, serif;
@@ -30,7 +42,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0b1f3a;
+  --foreground: #0f2547;
 }
 
 html {
@@ -47,14 +59,28 @@ body {
 
 /* Focus visibility for accessibility */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-brand);
   outline-offset: 2px;
   border-radius: 2px;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: #08111f;
+  background: var(--color-brand);
+  color: #ffffff;
+}
+
+/* Reusable soft gradient washes */
+.bg-wash-cool {
+  background-image:
+    radial-gradient(60rem 40rem at 15% -10%, var(--color-sky), transparent 60%),
+    radial-gradient(50rem 40rem at 100% 0%, var(--color-mint), transparent 55%),
+    linear-gradient(180deg, #ffffff, var(--color-paper-100));
+}
+.bg-wash-brand {
+  background-image:
+    radial-gradient(50rem 40rem at 80% -10%, var(--color-brand-soft), transparent 60%),
+    radial-gradient(40rem 30rem at 0% 110%, var(--color-accent-soft), transparent 55%),
+    linear-gradient(180deg, var(--color-paper-100), #ffffff);
 }
 
 /* Market ticker marquee */

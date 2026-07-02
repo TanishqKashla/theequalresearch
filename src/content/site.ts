@@ -3,34 +3,52 @@
 
 export const company = {
   name: "Equal Research",
-  legalName: "Equal Research Investment Advisory",
+  legalName: "The Equal Research Investment Adviser",
   established: "2016",
+  founder: "Raju Satpute",
   sebiRia: "INA000004377",
   iso: "ISO 9001:2008 — GCS/QMS/714",
-  email: "teamenableuser@gmail.com",
-  phone: "+91 00000 00000",
-  whatsapp: "910000000000",
+  email: "info@theequaleresearch.com",
+  phone: "+91 77720 80777",
+  landline: "0731-4069421",
+  whatsapp: "917772080777",
+  address:
+    "295, PU4, Scheme No. 54, 2nd Floor, Behind Orbit Mall, Near Vijay Nagar Square, Indore, Madhya Pradesh 452010",
+  hours: "Mon–Fri, 10:00 AM – 6:00 PM",
+  bank: {
+    name: "State Bank of India",
+    accountName: "The Equal Research Investment Adviser",
+    accountNumber: "40375417430",
+    ifsc: "SBIN0030450",
+    branch: "Scheme No. 54, A.B. Road, Indore, M.P. 452010",
+  },
 } as const;
 
+// Order and grouping mirror the reference site's header exactly.
+// (Home is intentionally omitted — the logo links back to the homepage.)
 export const nav = [
-  { label: "Home", href: "/#top" },
-  { label: "Services", href: "/#services" },
-  { label: "Insights", href: "/#insights" },
-  { label: "Careers", href: "/#careers" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Investor Charter", href: "/investor-charter" },
+  { label: "Complaint Status", href: "/complaint-status" },
+  { label: "Payments", href: "/payment" },
+  { label: "Blogs", href: "/blog" },
+  { label: "Careers", href: "/careers" },
+  { label: "Market Overview", href: "/market-overview" },
+  { label: "Methodology", href: "/methodology" },
 ] as const;
 
 export const moreLinks = [
-  { label: "Investor Grievance", href: "#" },
-  { label: "Regulatory Information", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms & Conditions", href: "#" },
-  { label: "Disclaimer", href: "#" },
-  { label: "Risk Disclosure", href: "#" },
-  { label: "Investor Charter", href: "#" },
-  { label: "SEBI Registration Details", href: "#" },
-  { label: "Complaint Status", href: "#" },
+  { label: "Disclaimer", href: "/disclaimer" },
+  { label: "Disclosure", href: "/disclosure" },
+  { label: "KYC Documents", href: "/kyc" },
+  { label: "Grievance Redressal", href: "/grievance-redressal" },
+  { label: "Termination & Refund Policy", href: "/refund-policy" },
 ] as const;
+
+// Primary call-to-action button in the header (right-aligned, like the reference).
+export const headerCta = { label: "Contact Us", href: "/contact" } as const;
 
 export const hero = {
   badge: "SEBI Registered Investment Adviser",
@@ -54,10 +72,11 @@ export const about = {
   eyebrow: "About Equal Research",
   title: "Understanding Markets. Building Futures.",
   intro:
-    "Established in 2016, Equal Research Investment Advisory is a SEBI Registered Investment Adviser dedicated to helping investors make informed financial decisions through research, market intelligence, and investor education.",
+    "Established in 2016 in Indore and led by our founder Raju Satpute, The Equal Research Investment Adviser is a SEBI Registered Investment Adviser dedicated to helping investors make informed financial decisions through research, market intelligence, and investor education.",
   body: [
     "We believe successful investing begins with understanding. Financial markets are influenced by businesses, industries, economic cycles, government policies, technological innovation, and investor behaviour. Navigating this complexity requires more than information—it requires disciplined research, structured analysis, and continuous learning.",
-    "Our approach combines fundamental analysis, technical analysis, sector intelligence, and market research to provide deeper insights into investment opportunities and emerging market trends. Rather than focusing solely on short-term movements, we emphasize understanding businesses, evaluating risks, and supporting sustainable wealth creation.",
+    "Our research is always grounded in both fundamental and technical analysis, supported by news-based insights and advanced research software. When these approaches are combined, they help us understand businesses, evaluate risks, and identify opportunities across equity and commodity markets.",
+    "Our work is delivered by a team of NISM-certified research professionals with a minimum of three years' experience in equity and commodity markets, organised across seven functional teams — Business Development, Research, E-marketing, HR, Accounts, Back-Office Automation, and IT Support.",
   ],
   mission:
     "To make high-quality financial thinking accessible by delivering research-driven insights, market intelligence, and educational resources that help individuals make more informed financial decisions.",

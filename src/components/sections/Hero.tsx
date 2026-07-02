@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -8,38 +9,71 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-ink-950 pt-32 pb-20 sm:pt-40 sm:pb-28"
+      className="relative isolate flex min-h-[92vh] items-center overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28"
     >
-      {/* Ambient background */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 -right-32 h-[36rem] w-[36rem] rounded-full bg-ink-700/40 blur-[120px]" />
-        <div className="absolute -bottom-48 -left-24 h-[32rem] w-[32rem] rounded-full bg-accent/10 blur-[120px]" />
-        <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
-      </div>
+      {/* Background photograph */}
+      <Image
+        src="/hero-bg.jpg"
+        alt=""
+        aria-hidden
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover object-[70%_center]"
+      />
+
+      {/* Readability scrims — keep the left text column crisp while the
+          skyscrapers stay vivid on the right. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.94) 24%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 74%)",
+        }}
+      />
+      {/* Bottom fade blends the photo into the section below */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0) 30%)",
+        }}
+      />
+      {/* Gentle top fade so header nav stays legible over the sky */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 22%)",
+        }}
+      />
+      {/* On small screens the text spans full width, so add a uniform lift */}
+      <div aria-hidden className="absolute inset-0 -z-10 bg-white/55 sm:hidden" />
+      {/* Soft brand glow for depth */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -left-24 -z-10 h-[32rem] w-[32rem] rounded-full bg-brand/10 blur-[130px]"
+      />
 
       <Container className="relative">
         <div className="max-w-3xl">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-accent-light">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-dark shadow-sm backdrop-blur">
               <ShieldCheck className="h-4 w-4" /> {hero.badge}
             </span>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mt-6 font-serif text-4xl leading-[1.08] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-serif text-4xl leading-[1.06] text-ink-950 drop-shadow-sm sm:text-5xl lg:text-[3.9rem]">
               {hero.headline}
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-800">
               {hero.subheadline}
             </p>
           </Reveal>
@@ -56,18 +90,18 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Stat row */}
+        {/* Stat row — frosted glass so it reads over any part of the photo */}
         <Reveal delay={0.32}>
-          <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:grid-cols-4">
+          <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/60 bg-white/40 shadow-xl shadow-ink-900/10 ring-1 ring-ink-900/5 backdrop-blur-md sm:grid-cols-4">
             {[
               { v: "Since 2016", l: "Research Heritage" },
               { v: "SEBI RIA", l: "Registered Adviser" },
               { v: "ISO 9001", l: "Certified Process" },
               { v: "7+", l: "Advisory Verticals" },
             ].map((s) => (
-              <div key={s.l} className="bg-ink-950/40 px-5 py-6">
-                <dt className="font-serif text-2xl text-accent">{s.v}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-wider text-white/55">
+              <div key={s.l} className="bg-white/60 px-5 py-6">
+                <dt className="font-serif text-2xl text-brand-dark">{s.v}</dt>
+                <dd className="mt-1 text-xs uppercase tracking-wider text-ink-800">
                   {s.l}
                 </dd>
               </div>
@@ -75,7 +109,7 @@ export function Hero() {
           </dl>
         </Reveal>
 
-        <p className="mt-6 text-xs text-white/40">
+        <p className="mt-6 text-xs font-medium text-ink-700">
           SEBI Reg. No. {company.sebiRia} · {company.iso}
         </p>
       </Container>

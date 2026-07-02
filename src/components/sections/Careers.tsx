@@ -9,7 +9,7 @@ export function Careers() {
   return (
     <section id="careers" className="bg-paper py-24">
       <Container>
-        <div className="overflow-hidden rounded-3xl border border-ink-900/10 bg-white">
+        <div className="overflow-hidden rounded-3xl border border-ink-900/10 bg-white shadow-xl shadow-ink-900/5">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
             {/* Left content */}
             <div className="p-8 sm:p-12">
@@ -18,7 +18,7 @@ export function Careers() {
                 title={careers.title}
                 description={careers.body}
               />
-              <p className="mt-5 font-serif text-lg italic text-accent-dark">
+              <p className="mt-5 font-serif text-lg italic text-brand">
                 “{careers.lead}”
               </p>
 
@@ -33,7 +33,7 @@ export function Careers() {
                         key={c}
                         className="flex items-center gap-2 text-sm text-sand-700"
                       >
-                        <span aria-hidden className="text-accent">
+                        <span aria-hidden className="text-brand">
                           ✦
                         </span>
                         {c}
@@ -66,15 +66,19 @@ export function Careers() {
             </div>
 
             {/* Right visual panel */}
-            <Reveal as="div" className="bg-ink-950 p-8 sm:p-12">
-              <div className="flex h-full flex-col justify-center">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent/15 text-accent">
+            <Reveal as="div" className="relative overflow-hidden bg-gradient-to-br from-brand via-brand to-brand-dark p-8 sm:p-12">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl"
+              />
+              <div className="relative flex h-full flex-col justify-center">
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white/15 text-white ring-1 ring-white/20">
                   <GraduationCap className="h-7 w-7" />
                 </span>
                 <h3 className="mt-6 font-serif text-2xl text-white">
                   Join a culture of research, learning &amp; market understanding.
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65">
+                <p className="mt-4 text-sm leading-relaxed text-white/80">
                   We welcome students, graduates, and professionals passionate
                   about financial markets and analytical thinking. Bring your
                   curiosity — we&apos;ll provide the framework.

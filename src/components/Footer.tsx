@@ -1,29 +1,18 @@
 import Link from "next/link";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import {
-  company,
-  nav,
-  moreLinks,
-  services,
-  footerDisclaimer,
-} from "@/content/site";
+import { Logo } from "@/components/ui/Logo";
+import { company, nav, moreLinks, footerDisclaimer } from "@/content/site";
+import { researchServices } from "@/content/pages";
 
 export function Footer() {
   return (
-    <footer className="bg-ink-950 text-white/70">
+    <footer className="border-t border-ink-900/10 bg-wash-brand text-sand-700">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-md bg-accent font-serif text-lg font-semibold text-ink-950">
-                E
-              </span>
-              <span className="font-serif text-lg font-semibold text-white">
-                Equal<span className="text-accent"> Research</span>
-              </span>
-            </div>
+            <Logo className="h-16 sm:h-20" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               A SEBI Registered Investment Adviser delivering research-driven
               insights, market intelligence, and investor education since{" "}
@@ -32,34 +21,34 @@ export function Footer() {
             <div className="mt-5 space-y-2 text-sm">
               <a
                 href={`mailto:${company.email}`}
-                className="flex items-center gap-2 hover:text-accent"
+                className="flex items-center gap-2 transition-colors hover:text-brand"
               >
-                <Mail className="h-4 w-4 text-accent" /> {company.email}
+                <Mail className="h-4 w-4 text-brand" /> {company.email}
               </a>
               <a
                 href={`tel:${company.phone}`}
-                className="flex items-center gap-2 hover:text-accent"
+                className="flex items-center gap-2 transition-colors hover:text-brand"
               >
-                <Phone className="h-4 w-4 text-accent" /> {company.phone}
+                <Phone className="h-4 w-4 text-brand" /> {company.phone}
               </a>
               <a
                 href={`https://wa.me/${company.whatsapp}`}
-                className="flex items-center gap-2 hover:text-accent"
+                className="flex items-center gap-2 transition-colors hover:text-brand"
               >
-                <MessageCircle className="h-4 w-4 text-accent" /> WhatsApp
+                <MessageCircle className="h-4 w-4 text-brand" /> WhatsApp
               </a>
             </div>
           </div>
 
           {/* Explore */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-900">
               Explore
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               {nav.map((n) => (
                 <li key={n.label}>
-                  <Link href={n.href} className="hover:text-accent">
+                  <Link href={n.href} className="transition-colors hover:text-brand">
                     {n.label}
                   </Link>
                 </li>
@@ -69,13 +58,13 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-900">
               Services
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {services.slice(0, 6).map((s) => (
+              {researchServices.slice(0, 6).map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/#services`} className="hover:text-accent">
+                  <Link href="/services" className="transition-colors hover:text-brand">
                     {s.title}
                   </Link>
                 </li>
@@ -85,13 +74,13 @@ export function Footer() {
 
           {/* Regulatory */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-900">
               Regulatory
             </h3>
             <ul className="mt-4 grid grid-cols-1 gap-2.5 text-sm sm:grid-cols-2 lg:grid-cols-1">
               {moreLinks.map((m) => (
                 <li key={m.label}>
-                  <Link href={m.href} className="hover:text-accent">
+                  <Link href={m.href} className="transition-colors hover:text-brand">
                     {m.label}
                   </Link>
                 </li>
@@ -101,22 +90,22 @@ export function Footer() {
         </div>
 
         {/* Credentials row */}
-        <div className="mt-12 grid gap-4 rounded-xl border border-white/10 bg-ink-900/50 p-5 text-sm sm:grid-cols-2">
+        <div className="mt-12 grid gap-4 rounded-xl border border-ink-900/10 bg-white/70 p-5 text-sm shadow-sm sm:grid-cols-2">
           <p>
-            <span className="text-white/50">SEBI Reg. No. (RIA): </span>
-            <span className="font-medium text-white">{company.sebiRia}</span>
+            <span className="text-sand-700">SEBI Reg. No. (RIA): </span>
+            <span className="font-medium text-ink-900">{company.sebiRia}</span>
           </p>
           <p className="sm:text-right">
-            <span className="text-white/50">Certification: </span>
-            <span className="font-medium text-white">{company.iso}</span>
+            <span className="text-sand-700">Certification: </span>
+            <span className="font-medium text-ink-900">{company.iso}</span>
           </p>
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-8 text-xs leading-relaxed text-white/45">
+        <p className="mt-8 text-xs leading-relaxed text-sand-700/80">
           {footerDisclaimer}
         </p>
-        <div className="mt-6 flex flex-col items-start justify-between gap-2 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col items-start justify-between gap-2 border-t border-ink-900/10 pt-6 text-xs text-sand-700/80 sm:flex-row sm:items-center">
           <p>
             © {company.established}–2026 {company.legalName}. All rights reserved.
           </p>

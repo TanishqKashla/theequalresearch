@@ -8,11 +8,11 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-ink-950 hover:bg-accent-light shadow-[0_8px_30px_-12px_rgba(200,164,92,0.6)] hover:-translate-y-0.5",
+    "bg-brand text-white hover:bg-brand-dark shadow-[0_10px_30px_-10px_rgba(13,139,139,0.55)] hover:-translate-y-0.5",
   outline:
-    "border border-white/30 text-white hover:border-accent hover:text-accent",
+    "border border-ink-900/20 bg-white/60 text-ink-900 hover:border-brand hover:text-brand hover:bg-white",
   ghost:
-    "border border-ink-900/15 text-ink-900 hover:border-accent hover:text-accent-dark",
+    "border border-ink-900/15 text-ink-900 hover:border-brand hover:text-brand",
 };
 
 export function Button({

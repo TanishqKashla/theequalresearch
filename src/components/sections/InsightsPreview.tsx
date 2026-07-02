@@ -23,17 +23,17 @@ export function InsightsPreview() {
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {insightsPreview.map((post, i) => (
             <Reveal as="div" key={post.title} delay={i * 0.06}>
-              <article className="group flex h-full flex-col rounded-2xl border border-ink-900/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink-900/5">
-                <span className="self-start rounded-full bg-accent/12 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-dark">
+              <article className="group flex h-full flex-col rounded-2xl border border-ink-900/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/10">
+                <span className="self-start rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-dark">
                   {post.category}
                 </span>
-                <h3 className="mt-4 font-serif text-xl leading-snug text-ink-900 group-hover:text-accent-dark">
+                <h3 className="mt-4 font-serif text-xl leading-snug text-ink-900 group-hover:text-brand">
                   {post.title}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-sand-700">
                   {post.blurb}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent-dark">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
                   Read more
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>

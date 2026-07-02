@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { nav, moreLinks } from "@/content/site";
+import { nav, moreLinks, headerCta } from "@/content/site";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
 
 export function Header() {
@@ -30,27 +31,25 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-9 z-50 transition-all duration-300",
         scrolled
-          ? "bg-ink-950/90 backdrop-blur-md shadow-lg shadow-ink-950/20"
+          ? "bg-white/90 backdrop-blur-md shadow-lg shadow-ink-900/5 ring-1 ring-ink-900/5"
           : "bg-transparent",
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/#top" className="flex items-center gap-2.5" aria-label="Equal Research home">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-accent font-serif text-lg font-semibold text-ink-950">
-            E
-          </span>
-          <span className="font-serif text-lg font-semibold text-white">
-            Equal<span className="text-accent"> Research</span>
-          </span>
+        <Link href="/" className="flex items-center gap-2.5" aria-label="The Equal Research home">
+          <Logo className="h-14 sm:h-16" priority />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-3.5 xl:flex 2xl:gap-5"
+          aria-label="Primary"
+        >
           {nav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-white/80 transition-colors hover:text-accent"
+              className="whitespace-nowrap text-[13px] font-medium text-ink-800/80 transition-colors hover:text-brand"
             >
               {item.label}
             </Link>
@@ -61,7 +60,7 @@ export function Header() {
             onMouseLeave={() => setMoreOpen(false)}
           >
             <button
-              className="flex items-center gap-1 text-sm font-medium text-white/80 transition-colors hover:text-accent"
+              className="flex items-center gap-1 whitespace-nowrap text-[13px] font-medium text-ink-800/80 transition-colors hover:text-brand"
               aria-expanded={moreOpen}
               aria-haspopup="true"
               onClick={() => setMoreOpen((v) => !v)}
@@ -70,12 +69,12 @@ export function Header() {
             </button>
             {moreOpen && (
               <div className="absolute right-0 top-full w-64 pt-3">
-                <ul className="overflow-hidden rounded-xl border border-white/10 bg-ink-900 py-2 shadow-2xl">
+                <ul className="overflow-hidden rounded-xl border border-ink-900/10 bg-white py-2 shadow-2xl shadow-ink-900/10">
                   {moreLinks.map((m) => (
                     <li key={m.label}>
                       <Link
                         href={m.href}
-                        className="block px-4 py-2 text-sm text-white/75 transition-colors hover:bg-ink-800 hover:text-accent"
+                        className="block px-4 py-2 text-sm text-ink-800/80 transition-colors hover:bg-brand-soft hover:text-brand-dark"
                       >
                         {m.label}
                       </Link>
@@ -86,16 +85,16 @@ export function Header() {
             )}
           </div>
           <Link
-            href="/#contact"
-            className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-ink-950 transition-all hover:bg-accent-light hover:-translate-y-0.5"
+            href={headerCta.href}
+            className="whitespace-nowrap rounded-full bg-brand px-5 py-2.5 text-[13px] font-semibold text-white shadow-lg shadow-brand/25 transition-all hover:bg-brand-dark hover:-translate-y-0.5"
           >
-            Get In Touch
+            {headerCta.label}
           </Link>
         </nav>
 
         {/* Mobile toggle */}
         <button
-          className="text-white lg:hidden"
+          className="text-ink-900 xl:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -106,9 +105,9 @@ export function Header() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <nav
-            className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-white/10 bg-ink-950 px-5 pb-8 pt-4"
+            className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-ink-900/10 bg-white px-5 pb-8 pt-4 shadow-xl shadow-ink-900/5"
             aria-label="Mobile"
           >
             {nav.map((item) => (
@@ -116,12 +115,12 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-white/5 py-3 text-base font-medium text-white/85"
+                className="block border-b border-ink-900/5 py-3 text-base font-medium text-ink-900"
               >
                 {item.label}
               </Link>
             ))}
-            <p className="pt-5 pb-2 text-xs font-semibold uppercase tracking-widest text-accent">
+            <p className="pt-5 pb-2 text-xs font-semibold uppercase tracking-widest text-brand">
               Regulatory & More
             </p>
             {moreLinks.map((m) => (
@@ -129,17 +128,17 @@ export function Header() {
                 key={m.label}
                 href={m.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm text-white/65"
+                className="block py-2 text-sm text-sand-700"
               >
                 {m.label}
               </Link>
             ))}
             <Link
-              href="/#contact"
+              href={headerCta.href}
               onClick={() => setOpen(false)}
-              className="mt-6 block rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-ink-950"
+              className="mt-6 block rounded-full bg-brand px-5 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-brand/25"
             >
-              Get In Touch
+              {headerCta.label}
             </Link>
           </nav>
         </div>
