@@ -24,31 +24,82 @@ export const company = {
   },
 } as const;
 
-// Order and grouping mirror the reference site's header exactly.
+// Navigation IA: high-value pages stay flat; research and SEBI-regulatory
+// links collapse into two labeled dropdowns to keep the header uncluttered.
 // (Home is intentionally omitted — the logo links back to the homepage.)
-export const nav = [
-  { label: "About Us", href: "/about" },
+export const primaryNav = [
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Investor Charter", href: "/investor-charter" },
-  { label: "Complaint Status", href: "/complaint-status" },
-  { label: "Payments", href: "/payment" },
-  { label: "Blogs", href: "/blog" },
   { label: "Careers", href: "/careers" },
-  { label: "Market Overview", href: "/market-overview" },
-  { label: "Methodology", href: "/methodology" },
 ] as const;
 
-export const moreLinks = [
-  { label: "Disclaimer", href: "/disclaimer" },
-  { label: "Disclosure", href: "/disclosure" },
-  { label: "KYC Documents", href: "/kyc" },
-  { label: "Grievance Redressal", href: "/grievance-redressal" },
-  { label: "Termination & Refund Policy", href: "/refund-policy" },
+export const navGroups = [
+  {
+    label: "Insights",
+    items: [
+      { label: "Blogs", href: "/blog" },
+      { label: "Market Overview", href: "/market-overview" },
+      { label: "Methodology", href: "/methodology" },
+    ],
+  },
+  {
+    label: "Compliance",
+    items: [
+      { label: "Investor Charter", href: "/investor-charter" },
+      { label: "Complaint Status", href: "/complaint-status" },
+      { label: "Disclaimer", href: "/disclaimer" },
+      { label: "Disclosure", href: "/disclosure" },
+      { label: "KYC Documents", href: "/kyc" },
+      { label: "Grievance Redressal", href: "/grievance-redressal" },
+      { label: "Termination & Refund Policy", href: "/refund-policy" },
+    ],
+  },
 ] as const;
+
+// Transactional utility link — sits beside the CTA, not inside a dropdown.
+export const paymentsLink = { label: "Payments", href: "/payment" } as const;
 
 // Primary call-to-action button in the header (right-aligned, like the reference).
 export const headerCta = { label: "Contact Us", href: "/contact" } as const;
+
+// Compliance acknowledgement popups shown in sequence on the home page,
+// on every visit. Each must be acknowledged via its button to proceed.
+export const compliancePopups = [
+  {
+    id: "notice",
+    icon: "⚠️",
+    title: "Important Notice",
+    body: [
+      "Investments in the securities market are subject to market risks. Please read all related documents carefully before making any investment.",
+      "We do not guarantee any kind of assured returns. When you invest in the securities market, your capital is at risk, and the value of your portfolio can fluctuate. You may end up with less than your investment / traded amount.",
+      "The fees (service charge) you pay to the company are solely for our services and not for investment purposes. All investments should be made through your own Demat account and managed independently.",
+      "We will never ask for your Demat ID or password, and we strongly advise you not to share this information with anyone, including our employees. If you choose to share this information, we cannot be held responsible for any consequences.",
+      "Please do not deposit any funds (payment) into a person's personal accounts or accounts that are not listed on our official website.",
+      "Never make payments for Demat account opening, handling, or any investment-related purposes unless specified on our website.",
+      "We do not offer services that are not mentioned on our website.",
+      "If you have any concerns or doubts regarding fraudulent activities, please refer to our terms and conditions or contact us directly.",
+    ],
+    cta: "I Agree",
+  },
+  {
+    id: "disclaimer",
+    title: "Important Disclaimer",
+    body: [
+      "Disclaimer: Investment in securities market are subject to market risks. Please read all related documents carefully before investing.",
+      "SEBI registration does not guarantee returns or assure performance of the intermediary.",
+      "Important Notice: We provide only research-based advisory services. We do not offer guaranteed profit services, profit sharing, portfolio management, or trading on behalf of clients.",
+      "If any individual falsely claims to represent our company and offers such services, please report it to us immediately.",
+      "User Consent: By using our services, you confirm that you are doing so voluntarily after understanding all terms, conditions, and associated risks.",
+      "अस्वीकरण: प्रतिभूति बाजार में निवेश बाजार जोखिमों के अधीन है। कृपया निवेश करने से पहले सभी दस्तावेज ध्यानपूर्वक पढ़ें।",
+      "सेबी पंजीकरण किसी भी प्रकार के रिटर्न की गारंटी नहीं देता है।",
+      "महत्वपूर्ण सूचना: हम केवल सलाहकारी सेवाएं प्रदान करते हैं। हम किसी भी प्रकार की गारंटी प्रॉफिट, प्रॉफिट शेयरिंग या आपके behalf पर ट्रेडिंग सेवाएं प्रदान नहीं करते हैं।",
+      "यदि कोई व्यक्ति हमारी कंपनी के नाम पर ऐसी सेवाएं देने का दावा करता है, तो तुरंत हमसे संपर्क करें।",
+      "नोट: हमारी सेवाएं लेना पूर्णतः आपकी इच्छा पर आधारित है और आप हमारे नियम एवं शर्तों से सहमत हैं।",
+    ],
+    cta: "I Understand",
+  },
+] as const;
 
 export const hero = {
   badge: "SEBI Registered Investment Adviser",
@@ -69,21 +120,25 @@ export const trustStrip = [
 ] as const;
 
 export const about = {
-  eyebrow: "About Equal Research",
-  title: "Understanding Markets. Building Futures.",
+  eyebrow: "About Our Company",
+  title: "Smart Financial Guidance Backed by Technology",
   intro:
-    "Established in 2016 in Indore and led by our founder Raju Satpute, The Equal Research Investment Adviser is a SEBI Registered Investment Adviser dedicated to helping investors make informed financial decisions through research, market intelligence, and investor education.",
+    "At Equal Research, we are committed to delivering intelligent, research-driven financial guidance powered by technology. As a modern advisory firm, we focus on helping individuals navigate the dynamic world of equity, derivatives, and commodity markets with confidence and clarity.",
   body: [
-    "We believe successful investing begins with understanding. Financial markets are influenced by businesses, industries, economic cycles, government policies, technological innovation, and investor behaviour. Navigating this complexity requires more than information—it requires disciplined research, structured analysis, and continuous learning.",
-    "Our research is always grounded in both fundamental and technical analysis, supported by news-based insights and advanced research software. When these approaches are combined, they help us understand businesses, evaluate risks, and identify opportunities across equity and commodity markets.",
-    "Our work is delivered by a team of NISM-certified research professionals with a minimum of three years' experience in equity and commodity markets, organised across seven functional teams — Business Development, Research, E-marketing, HR, Accounts, Back-Office Automation, and IT Support.",
+    "Our approach is built on a strong foundation of data analysis, market research, and disciplined trading methodologies. We aim to simplify complex market behavior into actionable insights, enabling our clients to make informed and timely decisions.",
+    "By integrating technology with financial expertise, we strive to provide a seamless advisory experience that emphasizes transparency, consistency, and professionalism. Our goal is not just to guide trades, but to build understanding and long-term confidence in market participation.",
   ],
   mission:
-    "To make high-quality financial thinking accessible by delivering research-driven insights, market intelligence, and educational resources that help individuals make more informed financial decisions.",
+    "To deliver accurate, research-backed market insights and practical trading guidance through a structured and disciplined approach, enabling clients to make confident and well-informed financial decisions.",
   vision:
-    "To become a trusted financial intelligence platform recognized for analytical excellence, investor education, and meaningful market insights.",
-  commitment:
-    "Investing Today for Tomorrow's Milestones — a successful long-term investment journey requires clarity of purpose, disciplined decision-making, continuous learning, and focus despite changing market conditions.",
+    "To become a trusted and technology-driven financial advisory platform that empowers individuals with insightful knowledge and encourages responsible, informed participation in financial markets.",
+  goals: [
+    "To build long-term relationships based on trust, transparency, and ethical practices.",
+    "To consistently deliver high-quality market insights and advisory support.",
+    "To simplify financial markets for clients through clear and structured guidance.",
+    "To continuously evolve our strategies and services in line with changing market conditions.",
+    "To promote disciplined and responsible trading habits among our clients.",
+  ],
   credentials: [
     { label: "SEBI Registered Investment Adviser (RIA)", value: company.sebiRia },
     { label: "ISO 9001:2008 Certified Organization", value: "GCS/QMS/714" },
@@ -325,6 +380,15 @@ export const careers = {
     "Economics",
   ],
 } as const;
+
+// Current open positions shown on the Careers page.
+export const careerOpenings = [
+  {
+    title: "HR Executive",
+    description:
+      "Manage recruitment, onboarding, employee relations, and HR compliance within the organization.",
+  },
+] as const;
 
 export const footerDisclaimer =
   "Investment in securities market is subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.";

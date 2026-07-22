@@ -2,8 +2,25 @@ import Link from "next/link";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
-import { company, nav, moreLinks, footerDisclaimer } from "@/content/site";
+import {
+  company,
+  primaryNav,
+  navGroups,
+  paymentsLink,
+  footerDisclaimer,
+} from "@/content/site";
 import { researchServices } from "@/content/pages";
+
+const insightsGroup = navGroups.find((g) => g.label === "Insights");
+const complianceGroup = navGroups.find((g) => g.label === "Compliance");
+
+// Explore column: primary pages + research links + the payments utility link.
+const exploreLinks = [
+  ...primaryNav,
+  ...(insightsGroup?.items ?? []),
+  paymentsLink,
+];
+const regulatoryLinks = complianceGroup?.items ?? [];
 
 export function Footer() {
   return (
@@ -46,7 +63,7 @@ export function Footer() {
               Explore
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {nav.map((n) => (
+              {exploreLinks.map((n) => (
                 <li key={n.label}>
                   <Link href={n.href} className="transition-colors hover:text-brand">
                     {n.label}
@@ -78,7 +95,7 @@ export function Footer() {
               Regulatory
             </h3>
             <ul className="mt-4 grid grid-cols-1 gap-2.5 text-sm sm:grid-cols-2 lg:grid-cols-1">
-              {moreLinks.map((m) => (
+              {regulatoryLinks.map((m) => (
                 <li key={m.label}>
                   <Link href={m.href} className="transition-colors hover:text-brand">
                     {m.label}

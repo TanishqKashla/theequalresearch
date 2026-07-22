@@ -7,6 +7,10 @@ import {
   Layers,
   Coins,
   Clock,
+  PiggyBank,
+  Briefcase,
+  Landmark,
+  Receipt,
   ArrowUpRight,
   ArrowRight,
   type LucideIcon,
@@ -22,11 +26,15 @@ export const metadata: Metadata = { title: "Services" };
 
 const icons: Record<string, LucideIcon> = {
   "equity-cash": LineChart,
+  "index-option": Activity,
+  "stock-option": Layers,
+  "btst-options": Clock,
   "stock-futures": TrendingUp,
-  "index-research": Activity,
-  "options-strategies": Layers,
   "commodity-mcx": Coins,
-  "btst-stbt": Clock,
+  "financial-planning": PiggyBank,
+  "investment-advisory": Briefcase,
+  "estate-planning": Landmark,
+  "tax-planning": Receipt,
 };
 
 export default function Page() {
@@ -44,7 +52,10 @@ export default function Page() {
               const Icon = icons[s.slug] ?? LineChart;
               return (
                 <Reveal as="div" key={s.slug} delay={(i % 3) * 0.06}>
-                  <article className="group flex h-full flex-col rounded-2xl border border-ink-900/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10">
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="group flex h-full flex-col rounded-2xl border border-ink-900/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10"
+                  >
                     <div className="flex items-center justify-between">
                       <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-white">
                         <Icon className="h-6 w-6" />
@@ -58,17 +69,23 @@ export default function Page() {
                     <p className="mt-3 text-sm leading-relaxed text-sand-700">
                       {s.summary}
                     </p>
-                    <ul className="mt-5 flex flex-wrap gap-2 border-t border-ink-900/10 pt-5">
-                      {s.features.map((f) => (
-                        <li
-                          key={f}
-                          className="rounded-full bg-paper-200 px-3 py-1 text-xs text-ink-800"
-                        >
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
+                    {s.features.length > 0 && (
+                      <ul className="mt-5 flex flex-wrap gap-2 border-t border-ink-900/10 pt-5">
+                        {s.features.map((f) => (
+                          <li
+                            key={f}
+                            className="rounded-full bg-paper-200 px-3 py-1 text-xs text-ink-800"
+                          >
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-brand">
+                      View details
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
                 </Reveal>
               );
             })}

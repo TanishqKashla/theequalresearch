@@ -18,83 +18,530 @@ export type ResearchService = {
 export const researchServices: ResearchService[] = [
   {
     slug: "equity-cash",
-    title: "Equity Cash Research",
-    tagline: "For investors and traders in the NSE cash market",
+    title: "Stock / Equity Cash",
+    tagline: "Lifetime Beginner",
     summary:
-      "Research-backed ideas for the equity cash segment, built on fundamental strength and technical structure for both intraday and short-term delivery participation.",
-    features: [
-      "Fundamental + technical screening",
-      "Intraday & delivery ideas",
-      "Defined entry, target & stop-loss",
-      "Live market-hours support",
-    ],
+      "Unlock powerful insights into your cash flow with our expert cash analysis service to make smarter, data-driven financial decisions",
+    features: [],
+  },
+  {
+    slug: "index-option",
+    title: "Index Option",
+    tagline: "Lifetime Beginner",
+    summary:
+      "Stay ahead of market trends with our Future Analysis service, designed to forecast potential movements and optimize your trading strategies.",
+    features: [],
+  },
+  {
+    slug: "stock-option",
+    title: "Stock Option",
+    tagline: "Lifetime Beginner",
+    summary:
+      "Master the complexities of stock options with expert analysis tailored to enhance your trading strategy and manage risk effectively.",
+    features: [],
+  },
+  {
+    slug: "btst-options",
+    title: "BTST OPTIONS",
+    tagline: "Lifetime Beginner",
+    summary:
+      "Gain an edge in trading index options with expert analysis that helps you decode market trends, hedge smartly, and boost returns.",
+    features: [],
   },
   {
     slug: "stock-futures",
-    title: "Stock Futures Research",
-    tagline: "Positional and intraday research for stock F&O",
+    title: "Stock Futures",
+    tagline: "Lifetime Beginner",
     summary:
-      "Structured research for the stock futures segment, designed for traders who want disciplined, risk-defined participation in leveraged positions.",
-    features: [
-      "Stock futures trend analysis",
-      "Risk-defined position sizing",
-      "Rollover & expiry guidance",
-      "Intraday & positional views",
-    ],
-  },
-  {
-    slug: "index-research",
-    title: "Index Research — Nifty & Bank Nifty",
-    tagline: "Reading the index during market hours",
-    summary:
-      "Continuous index research on Nifty and Bank Nifty, tracking trend, momentum, and key levels through the trading day.",
-    features: [
-      "Nifty & Bank Nifty levels",
-      "Trend & momentum reads",
-      "Support / resistance mapping",
-      "Live intraday updates",
-    ],
-  },
-  {
-    slug: "options-strategies",
-    title: "Options Research & Strategies",
-    tagline: "Nifty option and stock option research",
-    summary:
-      "Options research focused on structured strategies rather than tips alone — helping participants understand risk, reward, and the rationale behind each idea.",
-    features: [
-      "Index & stock options",
-      "Strategy-based approach",
-      "Risk & reward clarity",
-      "Market-hours guidance",
-    ],
+      "Strategically analyze long-term cash positions to build stronger portfolios with reduced risk and enhanced return potential.",
+    features: [],
   },
   {
     slug: "commodity-mcx",
-    title: "Commodity (MCX) Research",
-    tagline: "Global-linked research for the MCX segment",
+    title: "Commodity (MCX)",
+    tagline: "Lifetime Beginner",
     summary:
-      "Commodity research across gold, silver, crude oil, and base metals, informed by global cues and tracked closely through the session.",
-    features: [
-      "Bullion, energy & base metals",
-      "Global market monitoring",
-      "Intraday & positional ideas",
-      "HNI-focused coverage",
-    ],
+      "Trade in gold, silver, crude oil, and other commodities on the MCX with expert insights and real-time updates.",
+    features: [],
   },
   {
-    slug: "btst-stbt",
-    title: "BTST / STBT Positional",
-    tagline: "Overnight, positional research ideas",
+    slug: "financial-planning",
+    title: "Financial Planning",
+    tagline: "Planning Service",
     summary:
-      "Buy-Today-Sell-Tomorrow and Sell-Today-Buy-Tomorrow positional research — typically one to two well-researched ideas a day with an overnight perspective.",
-    features: [
-      "1–2 researched calls a day",
-      "Overnight positional view",
-      "Equity & derivatives",
-      "Clear risk parameters",
-    ],
+      "Expert financial planning services cover investments, retirement, taxes, and more. We create tailored plans to secure your financial future.",
+    features: [],
+  },
+  {
+    slug: "investment-advisory",
+    title: "Investment Advisory",
+    tagline: "Advisory Service",
+    summary:
+      "Investment advisory services drive financial goal achievement through expert planning and portfolio management.",
+    features: [],
+  },
+  {
+    slug: "estate-planning",
+    title: "Estate Planning",
+    tagline: "Wealth Transfer",
+    summary:
+      "Strategically manage assets and wealth transfer through comprehensive estate planning services.",
+    features: [],
+  },
+  {
+    slug: "tax-planning",
+    title: "Tax Planning",
+    tagline: "Tax Advisory",
+    summary:
+      "Optimize financial decisions to minimize tax liabilities with expert tax planning guidance.",
+    features: [],
   },
 ];
+
+/* ------------------------------------------------- Service detail pages */
+
+export type ServiceSection = {
+  heading: string;
+  intro?: string;
+  list?: string[];
+  ordered?: boolean;
+  outro?: string;
+};
+
+export type ServiceDetail = {
+  slug: string;
+  intro: string[];
+  sections: ServiceSection[];
+  sampleCall?: { buy: string; targets: string; stopLoss: string };
+  note?: string;
+};
+
+const tradingRulesHeading = "Trading Rules Every Trader Must Follow";
+
+export const serviceDetails: Record<string, ServiceDetail> = {
+  "equity-cash": {
+    slug: "equity-cash",
+    intro: [
+      "We provide research-based recommendations in the Cash Segment through our team of experienced Research Analysts.",
+      "Our recommendations are generated after in-depth technical analysis and market trend assessment, with a focus on identifying potential intraday trading opportunities in the Cash Market.",
+      "Considering the volatility of the securities market, this service is designed specifically for intraday trading opportunities, and clients are advised to evaluate risks before taking any position.",
+      "Recommendations are shared in stocks listed and traded on the National Stock Exchange (NSE) and are intended to assist clients in making informed trading decisions.",
+    ],
+    sections: [
+      {
+        heading: "Service Highlights",
+        list: [
+          "1 to 2 intraday research recommendations daily (subject to prevailing market conditions)",
+          "Clearly defined entry price, stop loss, and target levels",
+          "Timely trade updates and follow-ups",
+          "Research-driven market direction analysis",
+          "Recommendations based on technical and market analysis",
+          "Intraday-focused trade opportunities in NSE cash stocks",
+        ],
+      },
+      {
+        heading: "Trading Guidelines",
+        ordered: true,
+        list: [
+          "Avoid overtrading",
+          "Use disciplined position sizing",
+          "Always trade with a predefined stop loss",
+          "Avoid emotional decision-making",
+          "Be cautious in volatile market conditions",
+          "Protect trading capital through risk management",
+          "Avoid excessive leverage",
+          "Book profits and losses as per your trading plan",
+          "Consider transaction costs while trading",
+          "Capital preservation should remain the first priority",
+        ],
+      },
+    ],
+    sampleCall: {
+      buy: "BUY LUXIND CASH ABOVE ₹1220",
+      targets: "₹1240 | ₹1260 | ₹1285",
+      stopLoss: "₹1200",
+    },
+  },
+
+  "index-option": {
+    slug: "index-option",
+    intro: [
+      "We provide research-based recommendations in the Index Options Segment, supported by in-depth market analysis from our experienced Research Analyst team.",
+      "Our research focuses on major index derivatives such as NIFTY, BANKNIFTY, SENSEX and FINNIFTY, with an emphasis on identifying potential intraday opportunities in call and put options based on market direction, volatility, price action, and technical indicators.",
+      "Considering the high volatility in the derivatives market, this service is designed primarily for intraday trading opportunities, and clients are advised to evaluate risk before taking any position.",
+      "All recommendations are shared with clearly defined entry level, target range, and stop loss parameters to support disciplined trading decisions.",
+    ],
+    sections: [
+      {
+        heading: "What You Will Get",
+        list: [
+          "1 to 2 Index Option recommendations daily (subject to market conditions)",
+          "Research calls in NIFTY / BANKNIFTY / FINNIFTY options",
+          "Clearly defined entry, stop loss, and target levels",
+          "Intraday trade follow-ups and exit updates",
+          "Market direction and volatility analysis",
+          "Technical indicator-based trade setups",
+          "Support and resistance-based option strategy guidance",
+        ],
+      },
+      {
+        heading: "Our Research Approach",
+        intro: "Our recommendations are based on:",
+        list: [
+          "price action analysis",
+          "support and resistance levels",
+          "option chain observation",
+          "open interest trends",
+          "volatility and momentum indicators",
+          "intraday market sentiment",
+        ],
+        outro:
+          "This service is intended to help traders follow a structured and disciplined derivatives trading approach. Index options are widely used in Indian markets for intraday strategies and volatility-based setups.",
+      },
+      {
+        heading: tradingRulesHeading,
+        ordered: true,
+        list: [
+          "Trade only with predefined risk.",
+          "Always use stop loss.",
+          "Avoid overleveraging in volatile markets.",
+          "Do not hold positions emotionally.",
+          "Maintain disciplined lot sizing.",
+          "Follow entry and exit levels strictly.",
+          "Avoid overnight exposure unless separately planned.",
+          "Protect trading capital first.",
+          "Consider brokerage and transaction costs.",
+          "Not taking a trade is also a valid strategy.",
+        ],
+      },
+    ],
+    sampleCall: {
+      buy: "BUY NIFTY 22500 CE ABOVE ₹250",
+      targets: "₹280 | ₹310 | ₹350",
+      stopLoss: "₹220",
+    },
+  },
+
+  "stock-option": {
+    slug: "stock-option",
+    intro: [
+      "We provide research-based recommendations in the Stock Options Segment through a team of experienced Research Analysts.",
+      "Our research focuses on stock-specific options contracts traded on NSE, where recommendations are generated after in-depth technical analysis, price action study, open interest review, and market trend assessment.",
+      "This service is designed for traders looking to participate in intraday opportunities in stock call and put options, with clearly defined entry, target, and stop loss levels.",
+      "Considering the volatility of the derivatives segment, clients are advised to follow disciplined risk management and evaluate their suitability before trading.",
+    ],
+    sections: [
+      {
+        heading: "What You Will Get",
+        list: [
+          "1 to 2 stock option recommendations daily (subject to market conditions)",
+          "Research calls in selected stock options",
+          "Clearly defined entry price, target levels, and stop loss",
+          "Timely trade follow-ups and exit updates",
+          "Technical analysis-based trade setups",
+          "Volatility and momentum-based stock option opportunities",
+          "Intraday focused recommendations",
+        ],
+      },
+      {
+        heading: "Research Methodology",
+        intro: "Our recommendations are prepared using:",
+        list: [
+          "price action analysis",
+          "support and resistance zones",
+          "option chain analysis",
+          "open interest movement",
+          "volume breakout confirmation",
+          "market momentum indicators",
+          "stock-specific news and trend assessment",
+        ],
+      },
+      {
+        heading: tradingRulesHeading,
+        ordered: true,
+        list: [
+          "Always trade with predefined risk.",
+          "Use stop loss in every position.",
+          "Avoid overleveraging.",
+          "Never trade emotionally.",
+          "Follow disciplined position sizing.",
+          "Protect capital first.",
+          "Consider transaction costs and slippage.",
+          "Do not hold positions without a plan.",
+          "Exit trades as per levels provided.",
+          "Not taking a trade is also a valid strategy.",
+        ],
+      },
+    ],
+    sampleCall: {
+      buy: "BUY RELIANCE 3000 CE ABOVE ₹132",
+      targets: "₹142 | ₹152 | ₹165",
+      stopLoss: "₹122",
+    },
+  },
+
+  "btst-options": {
+    slug: "btst-options",
+    intro: [
+      "BTST (Buy Today, Sell Tomorrow) in stock options represents a short-term strategy where positions are initiated in selected stock option contracts during the current trading session and may be carried forward to the next trading day based on market setup and momentum.",
+      "The research focuses on identifying stock-specific breakout, momentum continuation, and overnight carry opportunities in NSE stock option contracts through in-depth technical and market analysis.",
+      "Since BTST positions involve overnight risk, gap movement risk, and option premium decay, this service is intended for traders who understand short-term derivatives trading and follow disciplined risk management.",
+    ],
+    sections: [
+      {
+        heading: "What You Will Get",
+        list: [
+          "1 BTST stock option setup daily (subject to market conditions)",
+          "Research calls in selected NSE stock options",
+          "Clearly defined entry, target, and stop loss levels",
+          "End-of-day trade setup before market close",
+          "Next-day exit guidance and timely follow-ups",
+          "Stock-specific momentum and breakout analysis",
+          "Risk-managed overnight carry strategy",
+        ],
+      },
+      {
+        heading: "Our Research Approach",
+        intro: "Setups are based on:",
+        list: [
+          "Stock-specific price action",
+          "Volume breakout confirmation",
+          "Support and resistance zones",
+          "Open interest and option chain trends",
+          "Overnight market sentiment",
+          "Stock news and sector momentum",
+          "Gap-up / gap-down probability assessment",
+        ],
+        outro:
+          "This structured research approach is designed to help traders identify short-duration overnight opportunities in stock options.",
+      },
+      {
+        heading: tradingRulesHeading,
+        ordered: true,
+        list: [
+          "Carry positions only with predefined risk.",
+          "Always use stop loss.",
+          "Avoid overleveraging in overnight trades.",
+          "Be cautious of gap-up and gap-down openings.",
+          "Consider option premium time decay.",
+          "Protect capital first.",
+          "Maintain disciplined lot sizing.",
+          "Exit positions as per next-day research updates.",
+          "Consider brokerage and transaction costs.",
+          "Avoid emotional carry-forward decisions.",
+        ],
+      },
+    ],
+    note: "Retail discussions often highlight that BTST in options can be highly risky, especially around volatile sessions or weekends due to time decay and overnight gaps.",
+  },
+
+  "stock-futures": {
+    slug: "stock-futures",
+    intro: [
+      "We offer research-based recommendations in stock futures through experienced analysts, focusing on NSE-traded contracts using technical analysis, market trends, volume studies, and open interest movement.",
+    ],
+    sections: [
+      {
+        heading: "What You Will Get",
+        list: [
+          "1 to 2 stock futures research calls daily (subject to market conditions)",
+          "Research calls in selected NSE stock futures",
+          "Clearly defined entry, target, and stop loss levels",
+          "Timely trade follow-ups and exit guidance",
+          "Stock-specific momentum and trend analysis",
+          "Technical and open interest-based setups",
+          "Intraday and short-term trade opportunities",
+        ],
+      },
+      {
+        heading: "Our Research Approach",
+        list: [
+          "Price action analysis",
+          "Support and resistance levels",
+          "Open interest trends",
+          "Volume breakout confirmation",
+          "Market sentiment analysis",
+          "Sector strength and momentum",
+          "Intraday trend continuation setups",
+        ],
+      },
+      {
+        heading: tradingRulesHeading,
+        ordered: true,
+        list: [
+          "Always trade with predefined risk.",
+          "Use stop loss in every futures position.",
+          "Avoid overleveraging.",
+          "Maintain disciplined lot sizing.",
+          "Protect trading capital first.",
+          "Do not trade emotionally.",
+          "Consider brokerage and carrying costs.",
+          "Follow exit levels strictly.",
+          "Avoid holding positions without a plan.",
+          "Not taking a trade is also a valid strategy.",
+        ],
+      },
+    ],
+    sampleCall: {
+      buy: "BUY HDFCBANK FUT ABOVE ₹750",
+      targets: "₹770 | ₹800 | ₹830",
+      stopLoss: "₹730",
+    },
+  },
+
+  "commodity-mcx": {
+    slug: "commodity-mcx",
+    intro: [
+      "We provide research-based recommendations in the Commodity Segment (MCX) through our Research Analyst team.",
+      "Our research covers commodity contracts on the Multi Commodity Exchange of India, including Bullion, Base Metals, and Energy Commodities such as Gold, Silver, Crude Oil, Natural Gas, Copper, Zinc, and others.",
+      "The service targets traders seeking intraday and short-term opportunities in commodity futures and options through technical analysis, market momentum, global cues, and price action.",
+    ],
+    sections: [
+      {
+        heading: "What You Will Get",
+        list: [
+          "1 to 2 commodity research calls daily (subject to market conditions)",
+          "Research calls in MCX bullion, metals, and energy contracts",
+          "Clearly defined entry, target, and stop loss levels",
+          "Timely trade follow-ups and exit guidance",
+          "Intraday and short-term trade setups",
+          "Global trend and volatility-based analysis",
+          "Research-driven market direction assessment",
+        ],
+      },
+      {
+        heading: "Research Coverage",
+        intro:
+          "Gold, Silver, Crude Oil, Natural Gas, Copper, Zinc, Aluminium, Nickel",
+      },
+      {
+        heading: "Research Methodology",
+        intro: "Our methods include:",
+        list: [
+          "price action analysis",
+          "support and resistance zones",
+          "global commodity price movement",
+          "US Dollar and crude correlation",
+          "international market cues",
+          "volume and momentum indicators",
+          "volatility and breakout setups",
+        ],
+      },
+      {
+        heading: tradingRulesHeading,
+        ordered: true,
+        list: [
+          "Always trade with predefined risk.",
+          "Use stop loss in every trade.",
+          "Avoid overleveraging in volatile commodities.",
+          "Protect capital first.",
+          "Follow disciplined lot sizing.",
+          "Consider overnight and global risk factors.",
+          "Do not trade emotionally.",
+          "Follow exit levels strictly.",
+          "Consider brokerage and transaction costs.",
+          "Not taking a trade is also a strategy.",
+        ],
+      },
+    ],
+    sampleCall: {
+      buy: "BUY CRUDE OIL ABOVE ₹6520",
+      targets: "₹6580 | ₹6640 | ₹6700",
+      stopLoss: "₹6460",
+    },
+  },
+
+  "financial-planning": {
+    slug: "financial-planning",
+    intro: [
+      "Our financial planning services cover investments, retirement, taxes, and more. We create tailored plans designed to secure your financial future.",
+      "We follow a structured, step-by-step process — understanding your goals, identifying areas of improvement, analysing your current position, and reviewing, monitoring, and updating the plan as your circumstances evolve.",
+    ],
+    sections: [
+      {
+        heading: "Our Financial Planning Process",
+        ordered: true,
+        list: [
+          "Understand — Understand Financial Goal, Risk Appetite and Return expectations",
+          "Identify — Identify areas of improvement",
+          "Analyze — Analyze the current course of action",
+          "Recommend & Review — Provide recommendation based on the analysis",
+          "Monitor — Monitor progress and update portfolio",
+          "Update & Reanalyze — Periodically update and reanalyze the plan",
+        ],
+      },
+    ],
+  },
+
+  "investment-advisory": {
+    slug: "investment-advisory",
+    intro: [
+      "Our investment advisory services are designed to help you achieve your financial goals through expert planning and disciplined portfolio management across a range of investment avenues.",
+    ],
+    sections: [
+      {
+        heading: "Mutual Fund",
+        intro:
+          "Our team assists clients in making informed investments in Direct Mutual Funds, aligning with their Risk Appetite, Financial Goals and Time Horizon. We meticulously consider Asset Allocation to optimize returns over the investment horizon.",
+      },
+      {
+        heading: "Stock Portfolio",
+        intro:
+          "We provide expert guidance on Stock Market investments, offering insights and strategies to help clients navigate the complexities of the stock market and make well-informed decisions.",
+      },
+      {
+        heading: "Portfolio Management System",
+        intro:
+          "A portfolio management system is a tool or software that helps investors track and optimize their investments, aiming to achieve their financial goals by managing risk and maximizing returns.",
+      },
+      {
+        heading: "Alternate Assets",
+        intro:
+          "Alternative assets are non-traditional investments like real estate, private equity, or hedge funds, offering diversification beyond stocks and bonds in a portfolio.",
+      },
+    ],
+  },
+
+  "estate-planning": {
+    slug: "estate-planning",
+    intro: [
+      "We help you strategically manage your assets and plan for wealth transfer through comprehensive estate planning.",
+    ],
+    sections: [
+      {
+        heading: "Will Planning",
+        intro:
+          "We help you draft a legally sound will and assist in making crucial nominations, ensuring your assets are distributed according to your wishes.",
+      },
+    ],
+  },
+
+  "tax-planning": {
+    slug: "tax-planning",
+    intro: [
+      "We help you optimise financial decisions to minimise tax liabilities, with tailored guidance for both individuals and businesses.",
+    ],
+    sections: [
+      {
+        heading: "Individual Tax Planning",
+        intro:
+          "Minimize tax liabilities for individuals. Optimize deductions, credits, and exemptions under sections 80C, 80CCC, 80CCD, 80D & 80E, and ensure compliance with tax regulations. Key sections for individuals include:",
+        list: [
+          "Income Tax",
+          "Capital Gains Tax",
+          "Estate Tax",
+          "Deductions",
+          "Credits",
+        ],
+      },
+      {
+        heading: "Corporate Tax Planning",
+        intro:
+          "Optimize tax strategies for businesses. Minimize corporate tax liabilities through effective deductions and credits, with guidance on Transfer Pricing, International Taxation, and Compliance.",
+      },
+    ],
+  },
+};
 
 /* ----------------------------------------------------------------- Pricing */
 
@@ -107,49 +554,49 @@ export type PricingPlan = {
 
 export const pricingPlans: PricingPlan[] = [
   {
-    segment: "Equity Cash",
+    segment: "Stock / Equity Cash",
     tiers: [
-      { label: "Basic", price: "₹7,000", period: "month" },
-      { label: "Standard", price: "₹16,000", period: "quarter" },
-      { label: "Premium", price: "₹29,000", period: "quarter" },
+      { label: "Basic", price: "₹8,000", period: "month" },
+      { label: "Standard", price: "₹18,000", period: "quarter" },
+      { label: "Premium", price: "₹27,500", period: "quarter" },
     ],
   },
   {
-    segment: "Index Options",
+    segment: "Index Option",
     tiers: [
-      { label: "Basic", price: "₹10,000", period: "month" },
-      { label: "Standard", price: "₹25,000", period: "quarter" },
-      { label: "Premium", price: "₹40,000", period: "quarter" },
+      { label: "Basic", price: "₹11,500", period: "month" },
+      { label: "Standard", price: "₹23,500", period: "quarter" },
+      { label: "Premium", price: "₹41,500", period: "quarter" },
     ],
   },
   {
-    segment: "Stock Options",
+    segment: "Stock Option",
     tiers: [
-      { label: "Basic", price: "₹12,000", period: "month" },
-      { label: "Standard", price: "₹29,500", period: "quarter" },
-      { label: "Premium", price: "₹49,000", period: "quarter" },
+      { label: "Basic", price: "₹13,500", period: "month" },
+      { label: "Standard", price: "₹31,000", period: "quarter" },
+      { label: "Premium", price: "₹47,500", period: "quarter" },
+    ],
+  },
+  {
+    segment: "BTST OPTIONS",
+    tiers: [
+      { label: "Basic", price: "₹14,000", period: "month" },
+      { label: "Standard", price: "₹36,000", period: "quarter" },
     ],
   },
   {
     segment: "Stock Futures",
     tiers: [
-      { label: "Basic", price: "₹12,000", period: "month" },
-      { label: "Standard", price: "₹29,500", period: "quarter" },
-      { label: "Premium", price: "₹49,000", period: "quarter" },
-    ],
-  },
-  {
-    segment: "BTST / STBT",
-    tiers: [
-      { label: "Basic", price: "₹12,500", period: "month" },
-      { label: "Standard", price: "₹37,500", period: "quarter" },
+      { label: "Basic", price: "₹10,500", period: "month" },
+      { label: "Standard", price: "₹31,500", period: "quarter" },
+      { label: "Premium", price: "₹50,500", period: "quarter" },
     ],
   },
   {
     segment: "Commodity (MCX)",
     tiers: [
-      { label: "Basic", price: "₹15,000", period: "month" },
-      { label: "Premium", price: "₹45,000", period: "quarter" },
+      { label: "Basic", price: "₹16,500", period: "month" },
+      { label: "Premium", price: "₹43,500", period: "quarter" },
     ],
   },
 ];
@@ -204,18 +651,90 @@ export const investorCharter = {
 
 /* --------------------------------------------------------- Complaint status */
 
-export type ComplaintRow = {
-  period: string;
-  pendingStart: number;
-  received: number;
-  resolved: number;
-  pendingEnd: number;
+export type ComplaintTable = {
+  title: string;
+  columns: string[];
+  rows: (string | number)[][];
+  grandTotal: (string | number)[];
+  notes?: string[];
 };
 
-export const complaintData: ComplaintRow[] = [
-  { period: "Current month", pendingStart: 0, received: 0, resolved: 0, pendingEnd: 0 },
-  { period: "Last 3 months", pendingStart: 0, received: 0, resolved: 0, pendingEnd: 0 },
-  { period: "Financial year to date", pendingStart: 0, received: 0, resolved: 0, pendingEnd: 0 },
+export const complaintMonthEnding = "APR-2026";
+
+export const complaintTables: ComplaintTable[] = [
+  {
+    title: `Data for the month ending - ${complaintMonthEnding}`,
+    columns: [
+      "Sr. No.",
+      "Received from",
+      "Pending at end of last month",
+      "Received",
+      "Resolved*",
+      "Total Pending#",
+      "Pending complaints > 3 months",
+      "Average Resolution time^ (in days)",
+    ],
+    rows: [
+      [1, "Directly from Investors", 0, 0, 0, 0, 0, 0],
+      [2, "SEBI (SCORES)", 0, 0, 0, 0, 0, 0],
+      [3, "Other Sources (if any)", 0, 1, 1, 0, 0, 0],
+    ],
+    grandTotal: ["", "Grand Total", 0, 1, 1, 0, 0, 0],
+    notes: [
+      "^ Average Resolution time is the sum total of time taken to resolve each complaint in days, in the current month divided by total number of complaints resolved in the current month.",
+    ],
+  },
+  {
+    title: "Trend of monthly disposal of complaints",
+    columns: [
+      "Sr. No.",
+      "Month",
+      "Carried forward from previous month",
+      "Received",
+      "Resolved*",
+      "Pending#",
+    ],
+    rows: [
+      [4, "April, 2026", 0, 0, 0, 0],
+      [5, "May, 2026", 0, 0, 0, 0],
+      [6, "June, 2025", 0, 1, 1, 0],
+      [7, "July, 2025", 0, 0, 0, 0],
+      [8, "August, 2025", 0, 0, 0, 0],
+      [9, "September, 2025", 0, 0, 0, 0],
+      [10, "October, 2025", 0, 0, 0, 0],
+      [11, "November, 2025", 0, 0, 0, 0],
+      [12, "December, 2025", 0, 0, 0, 0],
+      [1, "January, 2026", 0, 0, 0, 0],
+      [2, "February, 2026", 0, 0, 0, 0],
+      [3, "March, 2026", 0, 0, 0, 0],
+    ],
+    grandTotal: ["", "Grand Total", 0, 1, 1, 0],
+    notes: [
+      "* Inclusive of complaints of previous months resolved in the current month.",
+      "# Inclusive of complaints pending as on the last day of the month.",
+    ],
+  },
+  {
+    title: "Trend of annual disposal of complaints",
+    columns: [
+      "Sr. No.",
+      "Year",
+      "Carried forward from previous year",
+      "Received",
+      "Resolved**",
+      "Pending##",
+    ],
+    rows: [
+      [1, "2024-2025", 0, 0, 0, 0],
+      [2, "2025-2026", 0, 1, 1, 0],
+      [3, "2026-2027", 0, 0, 0, 0],
+    ],
+    grandTotal: ["", "Grand Total", 0, 1, 1, 0],
+    notes: [
+      "** Inclusive of complaints of previous years resolved in the current year.",
+      "## Inclusive of complaints pending as on the last day of the year.",
+    ],
+  },
 ];
 
 /* ----------------------------------------------------------------- Payment */

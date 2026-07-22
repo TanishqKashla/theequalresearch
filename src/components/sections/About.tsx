@@ -1,4 +1,4 @@
-import { Target, Eye, Compass, BadgeCheck } from "lucide-react";
+import { Target, Eye, Compass, BadgeCheck, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -24,11 +24,17 @@ export function About() {
             ))}
 
             <Reveal delay={0.2}>
-              <figure className="mt-8 border-l-2 border-brand pl-5">
-                <blockquote className="font-serif text-lg italic text-ink-800">
-                  “{about.commitment}”
-                </blockquote>
-              </figure>
+              <div className="mt-8">
+                <h3 className="font-serif text-xl text-ink-900">Our Goals</h3>
+                <ul className="mt-4 space-y-3">
+                  {about.goals.map((goal) => (
+                    <li key={goal} className="flex gap-3">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
+                      <span className="leading-relaxed text-sand-700">{goal}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           </div>
 
