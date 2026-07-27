@@ -7,7 +7,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-wash-cool relative overflow-hidden py-24"
+      className="bg-paper-200 relative overflow-hidden py-24"
     >
       <div
         aria-hidden

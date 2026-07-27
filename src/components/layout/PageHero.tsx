@@ -17,7 +17,7 @@ export function PageHero({
   image?: string;
 }) {
   return (
-    <section className="bg-wash-cool relative isolate overflow-hidden pt-40 pb-16 sm:pt-48 sm:pb-20">
+    <section className="bg-paper-200 relative isolate overflow-hidden pt-40 pb-16 sm:pt-48 sm:pb-20">
       {image ? (
         <>
           {/* Background photograph */}

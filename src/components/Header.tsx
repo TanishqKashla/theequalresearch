@@ -70,8 +70,8 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-9 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg shadow-ink-900/5 ring-1 ring-ink-900/5"
-          : "bg-transparent",
+          ? "bg-white shadow-lg shadow-ink-900/5 ring-1 ring-ink-900/5"
+          : "bg-white ring-1 ring-ink-900/5",
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 sm:px-8">

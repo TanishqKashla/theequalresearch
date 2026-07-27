@@ -30,7 +30,7 @@ export function SectionHeading({
             invert ? "text-accent-light" : "text-accent-dark",
           )}
         >
-          <span aria-hidden className="text-accent">
+          <span aria-hidden className="text-accent-dark">
             ✦
           </span>
           {eyebrow}

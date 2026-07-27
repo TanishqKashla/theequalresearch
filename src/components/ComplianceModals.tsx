@@ -44,7 +44,7 @@ export function ComplianceModals() {
 
       <div className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-2xl shadow-ink-950/30 ring-1 ring-ink-900/10">
         {/* Header */}
-        <div className="border-b border-ink-900/10 bg-wash-brand px-6 py-5">
+        <div className="border-b border-ink-900/10 bg-paper-200 px-6 py-5">
           {total > 1 && (
             <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-brand">
               Step {step + 1} of {total}

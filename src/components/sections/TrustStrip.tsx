@@ -3,7 +3,7 @@ import { trustStrip } from "@/content/site";
 
 export function TrustStrip() {
   return (
-    <section className="border-y border-ink-900/10 bg-gradient-to-r from-brand-soft via-white to-accent-soft">
+    <section className="border-y border-ink-900/10 bg-paper-200">
       <Container className="py-5">
         <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
           {trustStrip.map((item) => (

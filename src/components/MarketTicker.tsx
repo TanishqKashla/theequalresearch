@@ -99,7 +99,7 @@ export function MarketTicker() {
 
   return (
     <div
-      className="group fixed inset-x-0 top-0 z-[60] flex h-9 items-center border-b border-ink-900/10 bg-white/95 backdrop-blur"
+      className="group fixed inset-x-0 top-0 z-[60] flex h-9 items-center border-b border-ink-900/10 bg-white"
       role="region"
       aria-label="Live market quotes"
     >

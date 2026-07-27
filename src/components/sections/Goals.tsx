@@ -5,7 +5,7 @@ import { goals } from "@/content/site";
 
 export function Goals() {
   return (
-    <section className="bg-wash-brand relative overflow-hidden py-24">
+    <section className="bg-paper-200 relative overflow-hidden py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-32 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]"

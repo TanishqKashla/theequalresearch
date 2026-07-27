@@ -61,7 +61,7 @@ export function Hero() {
       <Container className="relative">
         <div className="max-w-3xl">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-dark shadow-sm backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-dark shadow-sm">
               <ShieldCheck className="h-4 w-4" /> {hero.badge}
             </span>
           </Reveal>
@@ -92,14 +92,14 @@ export function Hero() {
 
         {/* Stat row — frosted glass so it reads over any part of the photo */}
         <Reveal delay={0.32}>
-          <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/60 bg-white/40 shadow-xl shadow-ink-900/10 ring-1 ring-ink-900/5 backdrop-blur-md sm:grid-cols-4">
+          <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-900/10 bg-ink-900/10 shadow-xl shadow-ink-900/10 ring-1 ring-ink-900/5 sm:grid-cols-4">
             {[
               { v: "Since 2016", l: "Research Heritage" },
               { v: "SEBI RIA", l: "Registered Adviser" },
               { v: "ISO 9001", l: "Certified Process" },
               { v: "7+", l: "Advisory Verticals" },
             ].map((s) => (
-              <div key={s.l} className="bg-white/60 px-5 py-6">
+              <div key={s.l} className="bg-white px-5 py-6">
                 <dt className="font-serif text-2xl text-brand-dark">{s.v}</dt>
                 <dd className="mt-1 text-xs uppercase tracking-wider text-ink-800">
                   {s.l}

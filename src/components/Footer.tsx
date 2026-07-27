@@ -24,7 +24,7 @@ const regulatoryLinks = complianceGroup?.items ?? [];
 
 export function Footer() {
   return (
-    <footer className="border-t border-ink-900/10 bg-wash-brand text-sand-700">
+    <footer className="border-t border-ink-900/10 bg-paper-200 text-sand-700">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Brand */}
