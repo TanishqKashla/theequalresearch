@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Target, Eye, Compass, BadgeCheck, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -38,8 +39,27 @@ export function About() {
             </Reveal>
           </div>
 
-          {/* Right: mission / vision / credentials */}
+          {/* Right: founder / mission / vision / credentials */}
           <div className="space-y-5">
+            <Reveal>
+              <div className="overflow-hidden rounded-2xl border border-ink-900/10 bg-white shadow-sm">
+                <Image
+                  src="/rajesh-satpute.jpg"
+                  alt="Rajesh Satpute, Founder of The Equal Research"
+                  width={1086}
+                  height={1448}
+                  className="h-72 w-full object-cover object-top"
+                />
+                <div className="p-7">
+                  <h3 className="font-serif text-xl text-ink-900">Rajesh Satpute</h3>
+                  <p className="mt-1 text-sm font-medium text-brand">Founder</p>
+                  <p className="mt-3 text-sm leading-relaxed text-sand-700">
+                    Leading The Equal Research with a research-first, disciplined,
+                    and ethical approach to investment advisory.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
             <Reveal>
               <div className="rounded-2xl bg-gradient-to-br from-brand to-brand-dark p-7 text-white shadow-xl shadow-brand/20">
                 <div className="flex items-center gap-3">
