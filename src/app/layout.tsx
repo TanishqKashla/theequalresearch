@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { MarketTicker } from "@/components/MarketTicker";
@@ -57,6 +58,14 @@ export default function RootLayout({
         </a>
         <MarketTicker />
         {children}
+
+        {/* EnableStack accessibility widget — primary color matched to the
+            site's brand teal (--color-brand). Config must run before the
+            widget script loads. */}
+        <Script id="enablestack-config" strategy="beforeInteractive">
+          {`window.ENABLESTACK_CONFIG = { colors: { primary: "#0a6a6b" } };`}
+        </Script>
+        <Script src="/enablestack-widget.js" strategy="afterInteractive" />
       </body>
     </html>
   );
