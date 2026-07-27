@@ -18,18 +18,28 @@ export default function Page() {
       <section className="bg-white py-16 sm:py-20">
         <Container>
           <div className="mx-auto max-w-4xl space-y-14">
-            {complaintTables.map((table) => (
+            {complaintTables.map((table, ti) => (
               <div key={table.title}>
-                <h2 className="font-serif text-xl text-ink-900 sm:text-2xl">
+                <h2
+                  id={`complaint-table-${ti}`}
+                  className="font-serif text-xl text-ink-900 sm:text-2xl"
+                >
                   {table.title}
                 </h2>
 
                 <div className="mt-5 overflow-x-auto rounded-2xl border border-ink-900/10 shadow-sm">
-                  <table className="w-full min-w-[44rem] text-left text-sm">
+                  <table
+                    className="w-full min-w-[44rem] text-left text-sm"
+                    aria-labelledby={`complaint-table-${ti}`}
+                  >
                     <thead>
                       <tr className="bg-ink-900 text-white">
                         {table.columns.map((col) => (
-                          <th key={col} className="px-4 py-3.5 font-semibold">
+                          <th
+                            key={col}
+                            scope="col"
+                            className="px-4 py-3.5 font-semibold"
+                          >
                             {col}
                           </th>
                         ))}
@@ -41,33 +51,38 @@ export default function Page() {
                           key={r}
                           className={r % 2 === 0 ? "bg-white" : "bg-paper-100"}
                         >
-                          {row.map((cell, c) => (
-                            <td
-                              key={c}
-                              className={
-                                c === 1
-                                  ? "px-4 py-3.5 font-medium text-ink-900"
-                                  : "px-4 py-3.5 tabular-nums text-sand-700"
-                              }
-                            >
-                              {cell}
-                            </td>
-                          ))}
+                          {row.map((cell, c) =>
+                            c === 1 ? (
+                              <th
+                                key={c}
+                                scope="row"
+                                className="px-4 py-3.5 font-medium text-ink-900"
+                              >
+                                {cell}
+                              </th>
+                            ) : (
+                              <td
+                                key={c}
+                                className="px-4 py-3.5 tabular-nums text-sand-700"
+                              >
+                                {cell}
+                              </td>
+                            ),
+                          )}
                         </tr>
                       ))}
                       <tr className="border-t-2 border-ink-900/20 bg-brand-soft/50 font-semibold text-ink-900">
-                        {table.grandTotal.map((cell, c) => (
-                          <td
-                            key={c}
-                            className={
-                              c === 1
-                                ? "px-4 py-3.5"
-                                : "px-4 py-3.5 tabular-nums"
-                            }
-                          >
-                            {cell}
-                          </td>
-                        ))}
+                        {table.grandTotal.map((cell, c) =>
+                          c === 1 ? (
+                            <th key={c} scope="row" className="px-4 py-3.5">
+                              {cell}
+                            </th>
+                          ) : (
+                            <td key={c} className="px-4 py-3.5 tabular-nums">
+                              {cell}
+                            </td>
+                          ),
+                        )}
                       </tr>
                     </tbody>
                   </table>
