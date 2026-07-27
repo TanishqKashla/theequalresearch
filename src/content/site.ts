@@ -5,7 +5,7 @@ export const company = {
   name: "Equal Research",
   legalName: "The Equal Research Investment Adviser",
   established: "2016",
-  founder: "Raju Satpute",
+  founder: "Rajesh Satpute",
   sebiRia: "INA000004377",
   iso: "ISO 9001:2008 — GCS/QMS/714",
   email: "info@theequaleresearch.com",
