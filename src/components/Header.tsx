@@ -94,7 +94,7 @@ export function Header() {
                 "whitespace-nowrap rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors",
                 isActive(item.href)
                   ? "text-brand"
-                  : "text-ink-800/80 hover:text-brand",
+                  : "text-ink-800 hover:text-brand",
               )}
             >
               {item.label}
@@ -116,7 +116,7 @@ export function Header() {
                     "flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors",
                     active || isOpen
                       ? "text-brand"
-                      : "text-ink-800/80 hover:text-brand",
+                      : "text-ink-800 hover:text-brand",
                   )}
                   aria-expanded={isOpen}
                   aria-haspopup="true"
@@ -147,7 +147,7 @@ export function Header() {
                               "block px-4 py-2 text-sm transition-colors",
                               isActive(m.href)
                                 ? "bg-brand-soft font-medium text-brand-dark"
-                                : "text-ink-800/80 hover:bg-brand-soft hover:text-brand-dark",
+                                : "text-ink-800 hover:bg-brand-soft hover:text-brand-dark",
                             )}
                           >
                             {m.label}
@@ -168,7 +168,7 @@ export function Header() {
               "whitespace-nowrap rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors",
               isActive(paymentsLink.href)
                 ? "text-brand"
-                : "text-ink-800/80 hover:text-brand",
+                : "text-ink-800 hover:text-brand",
             )}
           >
             {paymentsLink.label}

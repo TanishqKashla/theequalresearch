@@ -24,7 +24,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const fieldBase =
-  "w-full rounded-lg border border-ink-900/15 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-sand-700/60 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30";
+  "w-full rounded-lg border border-ink-900/55 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-sand-700 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30";
 
 export function CareerForm({ position }: { position: string }) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -92,6 +92,7 @@ export function CareerForm({ position }: { position: string }) {
           <input
             type="text"
             placeholder="Your name"
+            autoComplete="name"
             className={fieldBase}
             aria-invalid={!!errors.name}
             {...register("name")}
@@ -101,6 +102,7 @@ export function CareerForm({ position }: { position: string }) {
           <input
             type="email"
             placeholder="you@example.com"
+            autoComplete="email"
             className={fieldBase}
             aria-invalid={!!errors.email}
             {...register("email")}
@@ -110,6 +112,7 @@ export function CareerForm({ position }: { position: string }) {
           <input
             type="tel"
             placeholder="+91 ..."
+            autoComplete="tel"
             className={fieldBase}
             aria-invalid={!!errors.phone}
             {...register("phone")}
@@ -119,6 +122,7 @@ export function CareerForm({ position }: { position: string }) {
           <input
             type="url"
             placeholder="Link to your resume (Google Drive, etc.)"
+            autoComplete="url"
             className={fieldBase}
             aria-invalid={!!errors.resume}
             {...register("resume")}
@@ -172,7 +176,7 @@ function Field({
         {label}
       </span>
       {children}
-      {error && <span className="mt-1 block text-xs text-red-600">{error}</span>}
+      {error && <span className="mt-1 block text-xs text-red-700">{error}</span>}
     </label>
   );
 }

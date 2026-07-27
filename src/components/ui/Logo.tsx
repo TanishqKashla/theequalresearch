@@ -9,14 +9,20 @@ import { cn } from "@/lib/cn";
 export function Logo({
   className,
   priority = false,
+  alt = "",
 }: {
   className?: string;
   priority?: boolean;
+  /** Accessible name. Defaults to "" (decorative) — the containing link/section
+   *  already provides the accessible name, so the logo image is marked
+   *  decorative to avoid a redundant announcement. */
+  alt?: string;
 }) {
   return (
     <Image
       src="/main-logo.png"
-      alt="The Equal Research — Investment Advisor"
+      alt={alt}
+      aria-hidden={alt === "" ? true : undefined}
       width={211}
       height={100}
       priority={priority}

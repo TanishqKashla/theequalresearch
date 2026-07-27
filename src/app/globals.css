@@ -15,10 +15,11 @@
   --color-brand-dark: #064e50;
   --color-brand-soft: #d6ecea;
 
-  /* Accent — refined gold (premium highlight) */
+  /* Accent — refined gold (premium highlight).
+     accent-dark is the text-safe shade (AA on light backgrounds). */
   --color-accent: #c8992f;
   --color-accent-light: #e6bd57;
-  --color-accent-dark: #9c7420;
+  --color-accent-dark: #6a4e10;
   --color-accent-soft: #faf1d8;
 
   /* Neutrals — bright paper */
@@ -26,7 +27,7 @@
   --color-paper-100: #fbfcfe;
   --color-paper-200: #f2f6fc;
   --color-paper-300: #e6edf7;
-  --color-sand-700: #556072;
+  --color-sand-700: #4b5567;
 
   /* Soft tints for gradient washes */
   --color-sky: #e9f3fd;

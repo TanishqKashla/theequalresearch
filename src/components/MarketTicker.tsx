@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Pause, Play } from "lucide-react";
 import type { Quote } from "@/app/api/ticker/route";
 
 const REFRESH_MS = 15_000; // re-poll the route every 15s for near-live updates
@@ -40,7 +40,7 @@ function QuoteItem({ q }: { q: Quote }) {
       </span>
       <span
         className={`inline-flex items-center gap-0.5 tabular-nums font-medium ${
-          up ? "text-emerald-600" : "text-red-600"
+          up ? "text-emerald-700" : "text-red-700"
         }`}
       >
         {up ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
@@ -54,6 +54,7 @@ function QuoteItem({ q }: { q: Quote }) {
 
 export function MarketTicker() {
   const [quotes, setQuotes] = useState<Quote[]>([]);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -90,17 +91,20 @@ export function MarketTicker() {
   // Duration scales with the number of items for a steady speed (~4s per item).
   const durationSec = Math.max(20, quotes.length * 4);
 
+  // Both tracks pause on hover, and stay paused when the user toggles the
+  // control (WCAG 2.2.2 — a mechanism to pause moving content).
+  const trackClass = `animate-ticker flex shrink-0 items-center group-hover:[animation-play-state:paused] ${
+    paused ? "[animation-play-state:paused]" : ""
+  }`;
+
   return (
     <div
-      className="group fixed inset-x-0 top-0 z-[60] h-9 overflow-hidden border-b border-ink-900/10 bg-white/95 backdrop-blur"
-      role="marquee"
+      className="group fixed inset-x-0 top-0 z-[60] flex h-9 items-center border-b border-ink-900/10 bg-white/95 backdrop-blur"
+      role="region"
       aria-label="Live market quotes"
     >
-      <div className="flex h-full items-center">
-        <div
-          className="animate-ticker flex shrink-0 items-center group-hover:[animation-play-state:paused]"
-          style={{ animationDuration: `${durationSec}s` }}
-        >
+      <div className="flex h-full flex-1 items-center overflow-hidden">
+        <div className={trackClass} style={{ animationDuration: `${durationSec}s` }}>
           {quotes.map((q, i) => (
             <QuoteItem key={`a-${q.symbol}-${i}`} q={q} />
           ))}
@@ -108,7 +112,7 @@ export function MarketTicker() {
         {/* Duplicate track for a seamless, gap-free loop. */}
         <div
           aria-hidden
-          className="animate-ticker flex shrink-0 items-center group-hover:[animation-play-state:paused]"
+          className={trackClass}
           style={{ animationDuration: `${durationSec}s` }}
         >
           {quotes.map((q, i) => (
@@ -116,6 +120,15 @@ export function MarketTicker() {
           ))}
         </div>
       </div>
+      <button
+        type="button"
+        onClick={() => setPaused((p) => !p)}
+        aria-pressed={paused}
+        aria-label={paused ? "Play market ticker" : "Pause market ticker"}
+        className="grid h-9 w-9 shrink-0 place-items-center border-l border-ink-900/10 bg-white text-ink-800 transition-colors hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-[-2px]"
+      >
+        {paused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+      </button>
     </div>
   );
 }

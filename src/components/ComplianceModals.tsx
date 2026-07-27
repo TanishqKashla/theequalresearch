@@ -59,8 +59,13 @@ export function ComplianceModals() {
           </h2>
         </div>
 
-        {/* Scrollable body */}
-        <div className="space-y-3 overflow-y-auto px-6 py-5 text-sm leading-relaxed text-sand-700">
+        {/* Scrollable body — focusable so it is reachable/scrollable by keyboard */}
+        <div
+          tabIndex={0}
+          role="region"
+          aria-label={`${active.title} details`}
+          className="space-y-3 overflow-y-auto px-6 py-5 text-sm leading-relaxed text-sand-700 focus-visible:outline-2 focus-visible:outline-offset-[-2px]"
+        >
           {active.body.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}

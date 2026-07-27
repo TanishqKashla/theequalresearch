@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <ComplianceModals />
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Hero />
         <TrustStrip />
         <About />
