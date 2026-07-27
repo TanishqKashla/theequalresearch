@@ -15,13 +15,15 @@ export type LegalContent = {
   title: string;
   description?: string;
   updated?: string;
+  /** Optional themed header photograph (path under /public). */
+  heroImage?: string;
   sections: LegalSection[];
 };
 
-export function LegalPage({ title, description, updated, sections }: LegalContent) {
+export function LegalPage({ title, description, updated, heroImage, sections }: LegalContent) {
   return (
     <PageLayout>
-      <PageHero title={title} description={description} />
+      <PageHero title={title} description={description} image={heroImage} />
       <section className="bg-white py-16 sm:py-20">
         <Container>
           <div className="mx-auto max-w-3xl">

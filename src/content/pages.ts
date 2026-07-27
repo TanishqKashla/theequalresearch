@@ -790,6 +790,7 @@ export const methodologySteps = [
 
 export const disclaimerContent: LegalContent = {
   title: "Disclaimer",
+  heroImage: "/banners/stock-charts.jpg",
   description:
     "Please read this disclaimer carefully before using our research and advisory services.",
   sections: [
@@ -824,6 +825,7 @@ export const disclaimerContent: LegalContent = {
 
 export const disclosureContent: LegalContent = {
   title: "Disclosure",
+  heroImage: "/banners/documents.jpg",
   description:
     "Disclosures made in the interest of transparency and investor protection.",
   sections: [
@@ -859,6 +861,7 @@ export const disclosureContent: LegalContent = {
 
 export const kycContent: LegalContent = {
   title: "KYC Documents",
+  heroImage: "/banners/planning.jpg",
   description:
     "Know Your Customer requirements for onboarding as a client of The Equal Research.",
   sections: [
@@ -895,6 +898,7 @@ export const kycContent: LegalContent = {
 
 export const grievanceContent: LegalContent = {
   title: "Grievance Redressal Mechanism",
+  heroImage: "/banners/meeting.jpg",
   description:
     "How to raise a concern and the process we follow to resolve it promptly and fairly.",
   sections: [
@@ -925,6 +929,7 @@ export const grievanceContent: LegalContent = {
 
 export const refundContent: LegalContent = {
   title: "Termination & Refund Policy",
+  heroImage: "/banners/coins.jpg",
   description:
     "The terms governing cancellation, termination, and refunds for our advisory services.",
   sections: [
@@ -952,6 +957,552 @@ export const refundContent: LegalContent = {
       heading: "How to request",
       paragraphs: [
         `To request a refund or terminate a service, contact us at ${company.email} or ${company.phone}. Approved refunds are processed to the original registered payment source.`,
+      ],
+    },
+  ],
+};
+
+/* ------------------------------------------------------- Privacy Policy */
+
+export const privacyContent: LegalContent = {
+  title: "Privacy Policy",
+  heroImage: "/banners/security-lock.jpg",
+  description:
+    "How The Equal Research collects, uses, and safeguards your personal information.",
+  sections: [
+    {
+      heading: "Our commitment",
+      paragraphs: [
+        `${company.legalName} ("we", "us", "our") respects your privacy and is committed to protecting the personal information you share with us. This policy explains what information we collect, why we collect it, and the choices you have. It applies to visitors of our website and to clients of our research and advisory services.`,
+      ],
+    },
+    {
+      heading: "Information we collect",
+      bullets: [
+        "Identity and contact details you provide, such as name, email address, phone number, and postal address.",
+        "KYC and suitability information required to onboard you as a client, including PAN, address proof, and risk-profiling responses.",
+        "Payment information limited to what is needed to record fees paid to our registered bank account.",
+        "Technical data such as browser type, device, and pages visited, collected automatically to operate and improve the website.",
+      ],
+    },
+    {
+      heading: "How we use your information",
+      bullets: [
+        "To provide research and advisory services and communicate recommendations and updates.",
+        "To complete KYC, assess suitability, and meet our regulatory obligations as a SEBI Registered Investment Adviser.",
+        "To respond to your enquiries, service requests, and grievances.",
+        "To send service-related notices and, where you have opted in, occasional updates.",
+      ],
+    },
+    {
+      heading: "Sharing and disclosure",
+      paragraphs: [
+        "We do not sell or rent your personal information. We may share data only with regulators, auditors, or service providers where required for compliance or to operate our services, and only to the extent necessary. Any such party is expected to protect your information and use it solely for the intended purpose.",
+      ],
+    },
+    {
+      heading: "Data security and retention",
+      paragraphs: [
+        "We apply reasonable technical and organisational measures to protect your information against unauthorised access, alteration, or disclosure. We retain personal and KYC records for the period required under applicable law and SEBI regulations, after which they are securely disposed of.",
+      ],
+    },
+    {
+      heading: "Cookies",
+      paragraphs: [
+        "Our website may use cookies and similar technologies to remember preferences and understand usage. You can control cookies through your browser settings; disabling them may affect some features.",
+      ],
+    },
+    {
+      heading: "Your rights",
+      paragraphs: [
+        "You may request access to, correction of, or deletion of your personal information, and you may withdraw consent to non-essential communications at any time, subject to our legal record-keeping obligations. To exercise these rights, contact us using the details below.",
+      ],
+    },
+    {
+      heading: "Updates to this policy",
+      paragraphs: [
+        "We may revise this policy from time to time. The current version will always be available on this page, and continued use of our services constitutes acceptance of the updated policy.",
+      ],
+    },
+  ],
+};
+
+/* --------------------------------------------------- Terms & Conditions */
+
+export const termsContent: LegalContent = {
+  title: "Terms & Conditions",
+  heroImage: "/banners/handshake.jpg",
+  description:
+    "The terms governing your use of our website and our research and advisory services.",
+  sections: [
+    {
+      heading: "Acceptance of terms",
+      paragraphs: [
+        `By accessing this website or subscribing to any service offered by ${company.legalName}, you agree to be bound by these Terms & Conditions along with our Disclaimer, Disclosure, Privacy Policy, and Risk Disclosure. If you do not agree, please do not use our website or services.`,
+      ],
+    },
+    {
+      heading: "Nature of our services",
+      paragraphs: [
+        `We are a SEBI Registered Investment Adviser (Reg. No. ${company.sebiRia}) providing research-based investment advice. We do not offer portfolio management, demat handling, guaranteed-return, or profit-sharing services, and we never trade on your behalf or take custody of your funds or securities.`,
+      ],
+    },
+    {
+      heading: "No guarantee of returns",
+      paragraphs: [
+        "Investment in securities market is subject to market risks. Our recommendations are based on research and analysis and are provided in good faith, but we do not guarantee any profit or assure any specific outcome. Past performance is not indicative of future results, and all decisions to act on a recommendation are yours alone.",
+      ],
+    },
+    {
+      heading: "Fees and payments",
+      bullets: [
+        "Fees are charged solely for research and advisory services and are not investment amounts.",
+        "All payments must be made only to the company's registered bank account; we never accept payments into personal accounts.",
+        "Fees once paid are governed by our Termination & Refund Policy.",
+      ],
+    },
+    {
+      heading: "Client responsibilities",
+      bullets: [
+        "Provide accurate KYC and suitability information and keep it current.",
+        "Assess your own financial position and risk tolerance before acting on any recommendation.",
+        "Keep your account, Demat, and login credentials confidential and never share them.",
+        "Use the services for your own personal, non-commercial purposes only.",
+      ],
+    },
+    {
+      heading: "Intellectual property",
+      paragraphs: [
+        "All research, reports, text, graphics, and other material on this website are the property of the company and are protected by applicable laws. You may not copy, reproduce, redistribute, or commercially exploit any content without our prior written consent.",
+      ],
+    },
+    {
+      heading: "Limitation of liability",
+      paragraphs: [
+        "We shall not be liable for any direct, indirect, incidental, or consequential loss arising from the use of, or reliance on, our website, research, or recommendations. The services are provided on an 'as is' basis.",
+      ],
+    },
+    {
+      heading: "Governing law and jurisdiction",
+      paragraphs: [
+        "These terms are governed by the laws of India. Any dispute shall be subject to the exclusive jurisdiction of the competent courts at Indore, Madhya Pradesh, without prejudice to your right to approach SEBI's SCORES portal or the Smart ODR mechanism.",
+      ],
+    },
+    {
+      heading: "Amendments",
+      paragraphs: [
+        "We may update these terms at any time. The latest version will be published on this page and will apply to your continued use of our website and services.",
+      ],
+    },
+  ],
+};
+
+/* -------------------------------------- Trading Principles of Recommendations */
+
+export const tradingPrinciplesContent: LegalContent = {
+  title: "Trading Principles of Our Recommendations",
+  heroImage: "/banners/trading-desk.jpg",
+  description:
+    "The disciplined principles that guide how we frame and communicate every research recommendation.",
+  sections: [
+    {
+      heading: "Research-first approach",
+      paragraphs: [
+        "Every recommendation we share is the outcome of structured research combining fundamental analysis, technical analysis, and continuous market monitoring. Recommendations are prepared by our research team and are intended to support informed, disciplined decision-making — not to encourage speculative or impulsive trading.",
+      ],
+    },
+    {
+      heading: "How a recommendation is structured",
+      bullets: [
+        "A clearly defined entry price or entry range.",
+        "One or more target levels for booking profits.",
+        "A predefined stop-loss to limit downside on every idea.",
+        "The relevant segment and time horizon (intraday, BTST/STBT, or positional).",
+      ],
+    },
+    {
+      heading: "Risk management principles",
+      bullets: [
+        "Capital preservation comes before returns — always trade with a stop-loss.",
+        "Risk only a small, predetermined portion of capital on any single idea.",
+        "Avoid over-leveraging and over-trading, especially in volatile conditions.",
+        "Maintain disciplined position sizing aligned to your risk profile.",
+        "Book profits and losses as per the plan; do not average losing positions emotionally.",
+        "Not taking a trade is also a valid and sometimes the best decision.",
+      ],
+    },
+    {
+      heading: "Suitability",
+      paragraphs: [
+        "Recommendations are shared in line with the segment and risk profile you have chosen at onboarding. You should evaluate each idea against your own objectives, capital, and risk tolerance before acting. If a product or segment appears unsuitable for you, do not trade it.",
+      ],
+    },
+    {
+      heading: "Important note",
+      paragraphs: [
+        "Recommendations are provided for your consideration only; execution is entirely at your discretion through your own broker and Demat account. We do not guarantee accuracy of every call, and market conditions can change rapidly. Investment in securities market is subject to market risks.",
+      ],
+    },
+  ],
+};
+
+/* ------------------------------------------------- Anti-Money Laundering */
+
+export const amlContent: LegalContent = {
+  title: "Anti-Money Laundering Policy",
+  heroImage: "/banners/money.jpg",
+  description:
+    "Our policy and procedures to prevent money laundering, in line with the PMLA, 2002 and SEBI guidelines.",
+  sections: [
+    {
+      heading: "Purpose",
+      paragraphs: [
+        `${company.legalName} is committed to preventing the use of its services for money laundering or the financing of illegitimate activities. This policy is framed in accordance with the Prevention of Money Laundering Act, 2002 (PMLA), the rules made thereunder, and the guidelines issued by SEBI for registered intermediaries.`,
+      ],
+    },
+    {
+      heading: "Know Your Customer (KYC)",
+      paragraphs: [
+        "We follow a documented client-identification process for every fee-paying client, verifying identity and address through valid documents such as PAN and Aadhaar, and recording the information needed to establish the client's identity and suitability before providing services.",
+      ],
+    },
+    {
+      heading: "Monitoring and record-keeping",
+      bullets: [
+        "Ongoing monitoring of client relationships to identify unusual or suspicious activity.",
+        "Maintenance of records of client identity and transactions for the period prescribed under the PMLA.",
+        "Secure storage of records with access limited to authorised personnel.",
+      ],
+    },
+    {
+      heading: "Reporting",
+      paragraphs: [
+        "Any transaction that appears suspicious or inconsistent with a client's known profile will be examined and, where required, reported to the Financial Intelligence Unit – India (FIU-IND) in the prescribed manner. We accept fees only through legitimate banking channels into the company's registered account.",
+      ],
+    },
+    {
+      heading: "Principal Officer",
+      paragraphs: [
+        `${company.founder} acts as the designated officer responsible for implementation of this policy, monitoring compliance, and coordinating reporting obligations. Concerns relating to anti-money laundering can be raised at ${company.email}.`,
+      ],
+    },
+    {
+      heading: "Employee awareness",
+      paragraphs: [
+        "Our team is made aware of AML obligations and the importance of vigilance, so that the firm's services are used only for legitimate purposes.",
+      ],
+    },
+  ],
+};
+
+/* --------------------------------------------- Annual Compliance Audit */
+
+export const complianceAuditContent: LegalContent = {
+  title: "Annual Compliance Audit",
+  heroImage: "/banners/calculator.jpg",
+  description:
+    "Our commitment to independent annual compliance audits under the SEBI (Investment Advisers) Regulations.",
+  sections: [
+    {
+      heading: "Regulatory requirement",
+      paragraphs: [
+        "Under the SEBI (Investment Advisers) Regulations, 2013, every registered Investment Adviser is required to conduct an annual audit of compliance with the regulations and applicable circulars through a suitably qualified independent professional (a member of the Institute of Chartered Accountants of India or the Institute of Company Secretaries of India).",
+      ],
+    },
+    {
+      heading: "Our practice",
+      paragraphs: [
+        `${company.legalName} undergoes this compliance audit for each financial year within the timeline prescribed by SEBI. The audit reviews adherence to registration conditions, KYC and suitability processes, fee practices, disclosures, record-keeping, and grievance redressal.`,
+      ],
+    },
+    {
+      heading: "Handling of audit outcomes",
+      bullets: [
+        "Observations, if any, are reviewed by management and addressed through corrective action.",
+        "Adverse findings and the corresponding action taken are reported to SEBI as required.",
+        "Processes are updated so that similar issues are prevented in future periods.",
+      ],
+    },
+    {
+      heading: "Transparency",
+      paragraphs: [
+        `We maintain records of each annual compliance audit. Clients or prospective clients seeking confirmation of our latest compliance-audit status may write to us at ${company.email}.`,
+      ],
+    },
+  ],
+};
+
+/* ----------------------------------------------------------- Upcoming IPO */
+
+export const upcomingIpoContent: LegalContent = {
+  title: "Upcoming IPO",
+  heroImage: "/banners/skyline.jpg",
+  description:
+    "Educational information on initial public offerings and how to approach them responsibly.",
+  sections: [
+    {
+      heading: "About this section",
+      paragraphs: [
+        "This page shares general, educational information about initial public offerings (IPOs) in the Indian primary market. It is intended for investor awareness only. We do not accept applications, handle allotments, or offer any IPO subscription service — applications are made through your own bank or broker via ASBA/UPI.",
+      ],
+    },
+    {
+      heading: "What is an IPO?",
+      paragraphs: [
+        "An initial public offering is the process by which a private company offers its shares to the public for the first time and gets listed on a stock exchange. IPOs can be an opportunity to participate in a company's growth, but they also carry risk, especially where valuations are rich or the business is unproven in public markets.",
+      ],
+    },
+    {
+      heading: "How to evaluate an IPO",
+      bullets: [
+        "Read the Red Herring Prospectus (RHP) and understand the business and its risks.",
+        "Assess the promoters, financial track record, and the purpose of the issue.",
+        "Compare valuations with listed peers rather than relying on listing-gain hype.",
+        "Consider the lock-in, offer-for-sale component, and post-listing supply.",
+        "Invest an amount aligned to your goals and risk profile — never borrow to apply.",
+      ],
+    },
+    {
+      heading: "Current upcoming issues",
+      paragraphs: [
+        "The list of currently open and upcoming issues changes frequently. For the latest schedule, please refer to the official websites of the stock exchanges (NSE / BSE) and SEBI, or contact our team for our current research view.",
+      ],
+    },
+    {
+      heading: "Disclaimer",
+      paragraphs: [
+        "Nothing on this page is a recommendation to subscribe to any specific issue. Investment in securities market, including IPOs, is subject to market risks; read all related documents carefully before investing.",
+      ],
+    },
+  ],
+};
+
+/* --------------------------------------------------------- Special Holding */
+
+export const specialHoldingContent: LegalContent = {
+  title: "Special Holding",
+  heroImage: "/banners/graph-up.jpg",
+  description:
+    "Our positional research service for medium-term holding ideas, with full risk disclosure.",
+  sections: [
+    {
+      heading: "What is Special Holding?",
+      paragraphs: [
+        "Special Holding is a positional research offering for clients who prefer to hold selected ideas over a medium-term horizon rather than trade intraday. Ideas are shared with a defined view, target zone, and stop-loss, based on our fundamental and technical research.",
+      ],
+    },
+    {
+      heading: "How it works",
+      bullets: [
+        "Research-backed positional ideas across eligible equity and derivative segments.",
+        "Each idea carries a clearly defined entry, target range, and stop-loss.",
+        "Periodic follow-ups and review as market conditions evolve.",
+        "Guidance aligned to your chosen segment and risk profile.",
+      ],
+    },
+    {
+      heading: "Who it is for",
+      paragraphs: [
+        "This service suits clients who can hold positions for a longer duration, tolerate interim volatility, and follow disciplined risk management. It is not suitable for those seeking assured returns or unable to bear overnight and market risk.",
+      ],
+    },
+    {
+      heading: "Important disclosure",
+      paragraphs: [
+        "Positional holdings carry overnight and event risk, and outcomes are not guaranteed. Past performance is not indicative of future results. Recommendations are for your consideration only; execution is at your discretion through your own account. Investment in securities market is subject to market risks.",
+      ],
+    },
+  ],
+};
+
+/* ---------------------------------------------------- Service Agreement */
+
+export const serviceAgreementContent: LegalContent = {
+  title: "Service Agreement",
+  heroImage: "/banners/office.jpg",
+  description:
+    "An overview of the advisory agreement between The Equal Research and its clients.",
+  sections: [
+    {
+      heading: "Purpose of the agreement",
+      paragraphs: [
+        `Before providing advisory services, ${company.legalName} enters into a written agreement with each client, as required under the SEBI (Investment Advisers) Regulations, 2013. The agreement sets out the scope of services, fees, risks, and the rights and obligations of both parties.`,
+      ],
+    },
+    {
+      heading: "Scope of services",
+      bullets: [
+        "Research-based investment advice in the segment(s) chosen by the client.",
+        "Advice suited to the client's risk profile and investment objectives.",
+        "No portfolio management, fund handling, or trading on the client's behalf.",
+      ],
+    },
+    {
+      heading: "Fees",
+      paragraphs: [
+        "The agreement specifies the applicable fee, billing period, and mode of payment. Fees are for advisory services only, are payable to the company's registered bank account, and are subject to the Termination & Refund Policy.",
+      ],
+    },
+    {
+      heading: "Rights and obligations",
+      bullets: [
+        "The adviser will act honestly, fairly, and in the client's interest, and will disclose material conflicts of interest.",
+        "The client will provide accurate information and keep KYC and risk-profile details updated.",
+        "Either party may terminate the agreement as per the agreed terms.",
+        "Confidentiality of client information will be maintained at all times.",
+      ],
+    },
+    {
+      heading: "Getting your copy",
+      paragraphs: [
+        `A copy of the executed service agreement is shared with every client at onboarding. If you need another copy, please contact us at ${company.email} or ${company.phone}.`,
+      ],
+    },
+  ],
+};
+
+/* ------------------------------------------------------------------ MITC */
+
+export const mitcContent: LegalContent = {
+  title: "Most Important Terms & Conditions (MITC)",
+  heroImage: "/banners/suit-growth.jpg",
+  description:
+    "A concise summary of the most important terms every client should understand.",
+  sections: [
+    {
+      heading: "About the MITC",
+      paragraphs: [
+        "The Most Important Terms & Conditions (MITC) summarise, in plain language, the key points of our client relationship. The MITC is provided in addition to — and does not replace — the full Service Agreement and other disclosures.",
+      ],
+    },
+    {
+      heading: "Key terms",
+      bullets: [
+        `We are a SEBI Registered Investment Adviser (Reg. No. ${company.sebiRia}) and provide only research-based advice.`,
+        "We do not offer guaranteed returns, profit-sharing, portfolio management, or demat/trading handling.",
+        "Fees are for advisory services only and must be paid to the company's registered bank account.",
+        "We never ask for your Demat or bank passwords, and you should never share them with anyone.",
+        "Recommendations are for your consideration; all trading decisions and executions are yours.",
+        "You may terminate the service and request a refund as per our Termination & Refund Policy.",
+        "Grievances can be raised with us and escalated to SEBI SCORES or the Smart ODR portal.",
+      ],
+    },
+    {
+      heading: "Risk acknowledgement",
+      paragraphs: [
+        "Investment in securities market is subject to market risks. You confirm that you understand these risks and that you are subscribing to our services voluntarily, after reading all related documents.",
+      ],
+    },
+  ],
+};
+
+/* --------------------------------------------------------- Risk Profiling */
+
+export const riskProfilingContent: LegalContent = {
+  title: "Risk Profiling",
+  heroImage: "/banners/analytics.jpg",
+  description:
+    "How we assess your risk tolerance to ensure the advice you receive is suitable.",
+  sections: [
+    {
+      heading: "Why risk profiling matters",
+      paragraphs: [
+        "As a SEBI Registered Investment Adviser, we are required to understand each client before offering advice. Risk profiling helps us match our research and recommendations to your financial situation, objectives, experience, and ability and willingness to take risk.",
+      ],
+    },
+    {
+      heading: "What we assess",
+      bullets: [
+        "Your investment objectives and time horizon.",
+        "Your income, financial commitments, and capacity to bear loss.",
+        "Your knowledge of and experience in the securities market.",
+        "Your comfort with volatility and drawdowns.",
+      ],
+    },
+    {
+      heading: "Risk categories",
+      paragraphs: [
+        "Based on your responses, your profile is typically classified as conservative, moderate, or aggressive. The segment and service you choose should be consistent with this classification.",
+      ],
+    },
+    {
+      heading: "Keeping it current",
+      paragraphs: [
+        `Your circumstances can change, so we recommend reviewing your risk profile periodically. You can request an update at any time by contacting us at ${company.email}. Completing the risk-profiling form is a prerequisite for onboarding.`,
+      ],
+    },
+  ],
+};
+
+/* ------------------------------------------------------------------- IPV */
+
+export const ipvContent: LegalContent = {
+  title: "In-Person Verification (IPV)",
+  heroImage: "/banners/cyber.jpg",
+  description:
+    "What In-Person Verification is and how it is completed during onboarding.",
+  sections: [
+    {
+      heading: "What is IPV?",
+      paragraphs: [
+        "In-Person Verification (IPV) is a step in the KYC process where a client's identity is verified against the original identification documents. It helps confirm that the person subscribing to our services is genuine and matches the KYC records.",
+      ],
+    },
+    {
+      heading: "How it is carried out",
+      bullets: [
+        "Verification of your original PAN and address-proof documents.",
+        "Confirmation of your identity through an in-person or permitted video-based process.",
+        "Recording of the verification in your onboarding file as required by regulation.",
+      ],
+    },
+    {
+      heading: "Your safeguards",
+      paragraphs: [
+        "IPV is only a verification step. As part of it, we will never ask for your Demat or bank passwords, OTPs, or trading credentials. If anyone claiming to represent us asks for such details, do not share them and report it to us immediately.",
+      ],
+    },
+    {
+      heading: "Need help?",
+      paragraphs: [
+        `For assistance in completing IPV, contact us at ${company.email} or ${company.phone}.`,
+      ],
+    },
+  ],
+};
+
+/* ----------------------------------------------------- Signature Mismatch */
+
+export const signatureMismatchContent: LegalContent = {
+  title: "Signature Mismatch",
+  heroImage: "/banners/architecture.jpg",
+  description:
+    "What to do if your signature on our records does not match your current signature.",
+  sections: [
+    {
+      heading: "What is a signature mismatch?",
+      paragraphs: [
+        "A signature mismatch occurs when the signature you have provided on a document does not match the signature already on record with us or with your bank/KYC records. To keep your account secure and compliant, mismatches must be resolved before certain requests can be processed.",
+      ],
+    },
+    {
+      heading: "How to resolve it",
+      bullets: [
+        "Submit a signed declaration confirming your current signature.",
+        "Provide a self-attested copy of a valid photo identity document for verification.",
+        "Where required, complete a fresh In-Person Verification (IPV).",
+      ],
+    },
+    {
+      heading: "Why this matters",
+      paragraphs: [
+        "This process protects you against unauthorised changes to your records. We may hold a request until the mismatch is satisfactorily resolved.",
+      ],
+    },
+    {
+      heading: "Contact",
+      paragraphs: [
+        `To resolve a signature mismatch, please contact us at ${company.email} or ${company.phone}, and our team will guide you through the required steps.`,
       ],
     },
   ],

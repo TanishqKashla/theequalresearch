@@ -41,6 +41,8 @@ export const navGroups = [
       { label: "Blogs", href: "/blog" },
       { label: "Market Overview", href: "/market-overview" },
       { label: "Methodology", href: "/methodology" },
+      { label: "Upcoming IPO", href: "/upcoming-ipo" },
+      { label: "Special Holding", href: "/special-holding" },
     ],
   },
   {
@@ -50,9 +52,24 @@ export const navGroups = [
       { label: "Complaint Status", href: "/complaint-status" },
       { label: "Disclaimer", href: "/disclaimer" },
       { label: "Disclosure", href: "/disclosure" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms-and-conditions" },
+      { label: "Trading Principles", href: "/trading-principles" },
+      { label: "Anti-Money Laundering", href: "/anti-money-laundering" },
+      { label: "Annual Compliance Audit", href: "/annual-compliance-audit" },
       { label: "KYC Documents", href: "/kyc" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
       { label: "Termination & Refund Policy", href: "/refund-policy" },
+    ],
+  },
+  {
+    label: "Client Panel",
+    items: [
+      { label: "Service Agreement", href: "/service-agreement" },
+      { label: "MITC", href: "/mitc" },
+      { label: "Risk Profiling", href: "/risk-profiling" },
+      { label: "IPV", href: "/ipv" },
+      { label: "Signature Mismatch", href: "/signature-mismatch" },
     ],
   },
 ] as const;

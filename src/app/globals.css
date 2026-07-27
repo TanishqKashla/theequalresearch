@@ -9,11 +9,11 @@
   --color-ink-700: #2a4d84;
   --color-ink-600: #3a5f9c;
 
-  /* Brand — fresh teal (growth / trust), the new primary color */
-  --color-brand: #0d8b8b;
-  --color-brand-light: #38b2ac;
-  --color-brand-dark: #0a6f70;
-  --color-brand-soft: #dff3f1;
+  /* Brand — deep teal (growth / trust), the new primary color */
+  --color-brand: #0a6a6b;
+  --color-brand-light: #2a9d98;
+  --color-brand-dark: #064e50;
+  --color-brand-soft: #d6ecea;
 
   /* Accent — refined gold (premium highlight) */
   --color-accent: #c8992f;

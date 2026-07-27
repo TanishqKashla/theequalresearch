@@ -13,6 +13,7 @@ export default function Page() {
       <PageHero
         title="Investor Charter"
         description="Our commitment to investor rights, service standards, and responsibilities as a SEBI Registered Investment Adviser."
+        image="/banners/finance-city.jpg"
       />
 
       <section className="bg-white py-16 sm:py-20">

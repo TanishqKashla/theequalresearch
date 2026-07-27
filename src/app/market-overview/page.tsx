@@ -15,6 +15,7 @@ export default function Page() {
       <PageHero
         title="Market Overview"
         description="A research-driven view of the markets we track — across equity, index, options, and commodities — updated through the trading day."
+        image="/banners/stock-screen.jpg"
       />
 
       <section className="bg-white py-16 sm:py-20">

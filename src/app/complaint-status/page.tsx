@@ -12,6 +12,7 @@ export default function Page() {
       <PageHero
         title="Complaint Board"
         description="Periodic disclosure of investor complaints, in line with SEBI requirements."
+        image="/banners/team.jpg"
       />
 
       <section className="bg-white py-16 sm:py-20">

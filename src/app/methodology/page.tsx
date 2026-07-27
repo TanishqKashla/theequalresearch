@@ -15,6 +15,7 @@ export default function Page() {
       <PageHero
         title="Our Methodology"
         description="Every insight we publish follows a disciplined, structured framework — grounded in analysis, not assumptions."
+        image="/banners/planning.jpg"
       />
 
       <section className="bg-white py-16 sm:py-20">
