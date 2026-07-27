@@ -11,10 +11,26 @@ export function ComplianceModals() {
   const [step, setStep] = useState(0);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const wasOpen = useRef(false);
 
   const total = compliancePopups.length;
   const active = compliancePopups[step];
   const open = step < total;
+
+  // When the popup sequence closes, reset focus to the top of the document so
+  // the next Tab starts from the beginning (i.e. lands on the skip link),
+  // rather than resuming from the now-removed acknowledge button's position.
+  useEffect(() => {
+    if (open) {
+      wasOpen.current = true;
+    } else if (wasOpen.current) {
+      wasOpen.current = false;
+      const body = document.body;
+      body.setAttribute("tabindex", "-1");
+      body.focus();
+      body.removeAttribute("tabindex");
+    }
+  }, [open]);
 
   // Lock body scroll while a popup is showing.
   useEffect(() => {
