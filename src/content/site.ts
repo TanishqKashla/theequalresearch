@@ -22,6 +22,11 @@ export const company = {
     ifsc: "SBIN0030450",
     branch: "Scheme No. 54, A.B. Road, Indore, M.P. 452010",
   },
+  upi: {
+    id: "Theequal.ia@validsbi",
+    payeeName: "The Equal Research Investment Adviser",
+    qr: "/upi-phonepe-qr.jpg",
+  },
 } as const;
 
 // Navigation IA: high-value pages stay flat; research and SEBI-regulatory

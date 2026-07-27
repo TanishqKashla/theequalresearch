@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Landmark, ShieldAlert, FileText } from "lucide-react";
+import Image from "next/image";
+import { Landmark, ShieldAlert, FileText, QrCode } from "lucide-react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -27,7 +28,7 @@ export default function Page() {
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid gap-8 lg:grid-cols-2">
             {/* Bank details */}
             <div className="rounded-3xl border border-ink-900/10 bg-paper-100 p-8 shadow-sm">
               <div className="flex items-center gap-3">
@@ -46,8 +47,44 @@ export default function Page() {
               </dl>
             </div>
 
-            {/* Warnings + docs */}
-            <div className="space-y-5">
+            {/* UPI */}
+            <div className="rounded-3xl border border-ink-900/10 bg-paper-100 p-8 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-lg bg-brand-soft text-brand">
+                  <QrCode className="h-5 w-5" />
+                </span>
+                <h2 className="font-serif text-xl text-ink-900">Pay via UPI</h2>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-sand-700">
+                Scan the QR code with any UPI app — PhonePe, Google Pay, Paytm, or
+                BHIM — or pay directly to our UPI ID below.
+              </p>
+              <div className="mt-5 flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+                <Image
+                  src={company.upi.qr}
+                  alt="UPI QR code for paying The Equal Research Investment Adviser via PhonePe or any UPI app"
+                  width={1080}
+                  height={1860}
+                  className="w-44 shrink-0 rounded-xl border border-ink-900/10 bg-white shadow-sm"
+                />
+                <div className="w-full">
+                  <p className="text-xs font-medium uppercase tracking-wider text-sand-700">
+                    UPI ID
+                  </p>
+                  <p className="mt-1 font-medium text-ink-900 break-all">
+                    {company.upi.id}
+                  </p>
+                  <p className="mt-4 text-xs font-medium uppercase tracking-wider text-sand-700">
+                    Payee Name
+                  </p>
+                  <p className="mt-1 text-sm text-ink-900">{company.upi.payeeName}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Warnings + docs */}
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
               <div className="rounded-2xl border border-red-200 bg-red-50/60 p-6">
                 <div className="flex items-center gap-3">
                   <ShieldAlert className="h-5 w-5 text-red-500" />
@@ -79,7 +116,6 @@ export default function Page() {
                   ))}
                 </ul>
               </div>
-            </div>
           </div>
 
           <p className="mt-8 text-sm leading-relaxed text-sand-700">
