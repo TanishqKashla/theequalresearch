@@ -22,6 +22,7 @@ export default function Page() {
       <PageHero
         title="Payments"
         description="Make your advisory payments securely to our registered company bank account."
+        image="/banners/coins.jpg"
       />
 
       <section className="bg-white py-16 sm:py-20">

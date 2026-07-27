@@ -15,6 +15,7 @@ export default function Page() {
       <PageHero
         title="Pricing"
         description="Transparent, research-led plans for each market segment. Choose the service that matches your focus and start with a plan that suits you."
+        image="/banners/pricing-growth.jpg"
       />
 
       <section className="bg-paper-200 py-16 sm:py-20">

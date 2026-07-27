@@ -14,6 +14,7 @@ export default function Page() {
       <PageHero
         title="Contact Us"
         description="Start with a conversation about your goals — our team is here to help with research-driven clarity."
+        image="/banners/meeting.jpg"
       />
 
       {/* Office details */}

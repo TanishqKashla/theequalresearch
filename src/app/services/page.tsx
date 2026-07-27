@@ -43,6 +43,7 @@ export default function Page() {
       <PageHero
         title="Our Services"
         description="Research and advisory across equity and commodity markets — grounded in fundamental and technical analysis, delivered with disciplined risk management."
+        image="/banners/services-advisory.jpg"
       />
 
       <section className="bg-paper-200 py-16 sm:py-20">

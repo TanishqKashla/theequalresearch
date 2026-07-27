@@ -12,6 +12,7 @@ export default function Page() {
       <PageHero
         title="About Us"
         description="A SEBI Registered Investment Adviser founded in 2016, combining disciplined research, market intelligence, and investor education."
+        image="/banners/office.jpg"
       />
       <About />
       <WhyUs />

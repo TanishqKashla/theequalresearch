@@ -17,6 +17,7 @@ export default function Page() {
       <PageHero
         title="Careers"
         description="Great research begins with curious minds. Explore current openings and apply to join our team."
+        image="/banners/careers-people.jpg"
       />
 
       <section className="bg-paper py-16 sm:py-20">
