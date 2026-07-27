@@ -10,6 +10,7 @@ import { cn } from "@/lib/cn";
 export function ComplianceModals() {
   const [step, setStep] = useState(0);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   const total = compliancePopups.length;
   const active = compliancePopups[step];
@@ -28,10 +29,46 @@ export function ComplianceModals() {
     if (open) buttonRef.current?.focus();
   }, [step, open]);
 
+  // Focus trap — keyboard focus cannot leave the popup until it is accepted.
+  // Tab / Shift+Tab cycle only within the dialog's focusable elements.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const focusable = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((el) => el.offsetParent !== null);
+      if (focusable.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const activeEl = document.activeElement as HTMLElement | null;
+      if (!dialog.contains(activeEl)) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && activeEl === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && activeEl === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown, true);
+    return () => document.removeEventListener("keydown", onKeyDown, true);
+  }, [open, step]);
+
   if (!active) return null;
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-labelledby={`compliance-${active.id}-title`}
